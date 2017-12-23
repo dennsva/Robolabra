@@ -9,13 +9,6 @@ package robotti;
  *
  * @author Dennis
  */
-public class Robotti {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public class Main {
     
 }
