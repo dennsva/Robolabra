@@ -1,0 +1,69 @@
+package robotti;
+
+import lejos.nxt.*;
+
+/**
+ * Example leJOS Project with an ant build file
+ *
+ */
+public class Robotti {
+
+	public static void main(String[] args) {
+		//alas = A forward
+		//eteenpäin = B forward
+		TouchSensor sensori1 = new TouchSensor(SensorPort.S1);
+		TouchSensor sensori2 = new TouchSensor(SensorPort.S2);
+		
+//		while (true) {
+//			if (sensori1.isPressed()) {
+//				Motor.A.rotate(90);
+//			} else if (sensori2.isPressed()) {
+//				Motor.A.rotate(-90);
+//			} else if (Button.ENTER.isPressed()) {
+//				break;
+//			}
+//		}
+		
+		Button.LEFT.addButtonListener(new ButtonListener() {
+			public void buttonPressed(Button b) {
+				Motor.B.forward();
+			}
+			
+			public void buttonReleased(Button b) {
+				Motor.B.stop();
+			}
+		});
+		
+		Button.RIGHT.addButtonListener(new ButtonListener() {
+			public void buttonPressed(Button b) {
+				Motor.B.backward();
+			}
+			
+			public void buttonReleased(Button b) {
+				Motor.B.stop();
+			}
+		});
+		
+		SensorPort.S1.addSensorPortListener(new SensorPortListener() {
+			public void stateChanged(SensorPort p, int i, int f) {
+				if (i == 0) {
+					Motor.A.forward();
+				} else {
+					Motor.A.stop();
+				}
+			}
+		});
+		
+		SensorPort.S2.addSensorPortListener(new SensorPortListener() {
+			public void stateChanged(SensorPort p, int i, int f) {
+				if (i == 0) {
+					Motor.A.backward();
+				} else {
+					Motor.A.stop();
+				}
+			}
+		});
+		
+		Button.ESCAPE.waitForPressAndRelease();
+	}
+}

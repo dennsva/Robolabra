@@ -1,0 +1,21 @@
+package robotti;
+
+import lejos.nxt.*;
+
+/**
+ * Example leJOS Project with an ant build file
+ *
+ */
+public class Robotti {
+
+	public static void main(String[] args) {
+		//alas = A forward
+		Motor.A.setSpeed(180);
+		Motor.A.forward();
+		Motor.A.rotate(40);
+		
+		Motor.B.setSpeed(180);
+		Motor.B.forward();
+		Motor.B.rotate(-720);
+	}
+}
