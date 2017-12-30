@@ -6,11 +6,22 @@ import lejos.nxt.*;
  * Example leJOS Project with an ant build file
  *
  */
+
+/**
+Ohjelmassa on ensin toiminnallisuus kynän korkeuden hienosäätöön, jotta piirturi toimii tarkoituksenmukaisesti. (metodi asetaKorkeus)
+Tämän jälkeen piirturia on mahdollista käyttää manuaalisesti nappien sekä kosketussensorien avulla.
+En löytänyt tapaa poistaa listeneria moottorista A, joten deaktivoin sen booleanin moottoriA avulla.
+ */
 public class Robotti {
 
+	static boolean moottoriA;
+	
 	public static void main(String[] args) {
 		//alas = A forward
 		//vasemmalle = B forward
+		Motor.B.setSpeed(90);
+		Motor.C.setSpeed(90);
+		asetaKorkeus();
 		
 		//piirturin siirtäminen vasemmalle
 		Button.LEFT.addButtonListener(new ButtonListener() {
@@ -34,11 +45,42 @@ public class Robotti {
 			}
 		});
 		
-		//kynän siirtäminen alaspäin
+		//kynän siirtäminen eteen
 		SensorPort.S1.addSensorPortListener(new SensorPortListener() {
 			public void stateChanged(SensorPort p, int i, int f) {
 				TouchSensor sensor = new TouchSensor(p);
 				if (sensor.isPressed()) {
+					Motor.C.forward();
+				} else {
+					Motor.C.stop();
+				}
+			}
+		});
+		
+		//kynän siirtäminen taakse
+		SensorPort.S2.addSensorPortListener(new SensorPortListener() {
+			public void stateChanged(SensorPort p, int i, int f) {
+				TouchSensor sensor = new TouchSensor(p);
+				if (sensor.isPressed()) {
+					Motor.C.backward();
+				} else {
+					Motor.C.stop();
+				}
+			}
+		});
+		
+		Button.ESCAPE.waitForPressAndRelease();
+	}
+	
+	public static void asetaKorkeus() {
+		moottoriA = true;
+		System.out.println("Aseta kynän korkeus ja paina enter");
+		
+		//kynän siirtäminen alaspäin
+		SensorPort.S1.addSensorPortListener(new SensorPortListener() {
+			public void stateChanged(SensorPort p, int i, int f) {
+				TouchSensor sensor = new TouchSensor(p);
+				if (sensor.isPressed() && moottoriA) {
 					Motor.A.forward();
 				} else {
 					Motor.A.stop();
@@ -50,7 +92,7 @@ public class Robotti {
 		SensorPort.S2.addSensorPortListener(new SensorPortListener() {
 			public void stateChanged(SensorPort p, int i, int f) {
 				TouchSensor sensor = new TouchSensor(p);
-				if (sensor.isPressed()) {
+				if (sensor.isPressed() && moottoriA) {
 					Motor.A.backward();
 				} else {
 					Motor.A.stop();
@@ -58,6 +100,10 @@ public class Robotti {
 			}
 		});
 		
-		Button.ESCAPE.waitForPressAndRelease();
+		Button.ENTER.waitForPressAndRelease();
+		moottoriA = false;
+		SensorPort.S1.reset();
+		SensorPort.S2.reset();
+		LCD.clear();
 	}
 }
