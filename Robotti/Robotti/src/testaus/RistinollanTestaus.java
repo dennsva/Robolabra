@@ -19,6 +19,7 @@ public class RistinollanTestaus {
 			peli.pelaa(indeksi);
 		}
 		
+                System.out.println(peli.ruudukkoString());
 		System.out.println("Voittaja: " + peli.merkki(peli.voittaja()));
 		
 	}
