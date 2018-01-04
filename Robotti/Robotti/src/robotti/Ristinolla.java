@@ -41,7 +41,7 @@ public class Ristinolla {
 	
 	public int pelattuja(int pelaaja) {
 		int pelattuja = 0;
-		for (int i = 0; i < ruudukko.size();) {
+		for (int i = 0; i < ruudukko.size(); i++) {
 			if (ruudukko.get(i) == pelaaja) pelattuja++;
 		}
 		return pelattuja;
@@ -53,7 +53,10 @@ public class Ristinolla {
 	}
 	
 	public void pelaa(int indeksi) {
-		ruudukko.set(indeksi, vuorossa());
+            if (voittaja() > 0) return;
+            if (ruudukko.get(indeksi) > 0) return;
+	
+            ruudukko.set(indeksi, vuorossa());
 	}
 	
 	public int voittorivi(int indeksi1, int indeksi2, int indeksi3) {
