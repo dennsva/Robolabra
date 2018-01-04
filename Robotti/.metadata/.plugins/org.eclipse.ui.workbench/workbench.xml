@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="22" version="2.0">
+<workbench progressCount="28" version="2.0">
 <workbenchAdvisor/>
 <window height="768" maximized="true" width="958" x="0" y="24">
 <fastViewData fastViewLocation="1024"/>
-<intro standby="true"/>
 <perspectiveBar>
 <itemSize x="160"/>
 </perspectiveBar>
@@ -18,7 +17,8 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="172" y="34"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ant.ui.internal.editor.AntEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -27,18 +27,74 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
+<part id="10"/>
+</presentation>
 </folder>
 </info>
 </editorArea>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HelloWorld.java" partName="HelloWorld.java" path="/home/lego/Robolabra/Robotti/org.lejos.example/src/org/lejos/example/HelloWorld.java" title="HelloWorld.java" tooltip="org.lejos.example/src/org/lejos/example/HelloWorld.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/org.lejos.example/src/org/lejos/example/HelloWorld.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="254" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Robotti.java" partName="Robotti.java" path="/home/lego/Robolabra/Robotti/Robotti/src/robotti/Robotti.java" title="Robotti.java" tooltip="Robotti/src/robotti/Robotti.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Robotti/src/robotti/Robotti.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="98" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.ant.ui.internal.editor.AntEditor" name="build.xml" partName="build.xml" path="/home/lego/Robolabra/Robotti/samples/SpeedTest/build.xml" title="build.xml" tooltip="samples/SpeedTest/build.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/samples/SpeedTest/build.xml"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SpeedTest.java" partName="SpeedTest.java" path="/home/lego/Robolabra/Robotti/samples/SpeedTest/SpeedTest.java" title="SpeedTest.java" tooltip="samples/SpeedTest/SpeedTest.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/samples/SpeedTest/SpeedTest.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="487" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RCPilot.java" partName="RCPilot.java" path="/home/lego/Robolabra/Robotti/samples/RCPilot/RCPilot.java" title="RCPilot.java" tooltip="samples/RCPilot/RCPilot.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/samples/RCPilot/RCPilot.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="918" selectionTopPixel="2295"/>
+</editor>
+<editor id="org.eclipse.ant.ui.internal.editor.AntEditor" name="build.xml" partName="build.xml" path="/home/lego/Robolabra/Robotti/samples/BumperCar/build.xml" title="build.xml" tooltip="samples/BumperCar/build.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/samples/BumperCar/build.xml"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BumperCar.java" partName="BumperCar.java" path="/home/lego/Robolabra/Robotti/samples/BumperCar/BumperCar.java" title="BumperCar.java" tooltip="samples/BumperCar/BumperCar.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/samples/BumperCar/BumperCar.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="660" selectionTopPixel="983"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DistanceTest.java" partName="DistanceTest.java" path="/home/lego/Robolabra/Robotti/samples/DistanceTest/DistanceTest.java" title="DistanceTest.java" tooltip="samples/DistanceTest/DistanceTest.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/samples/DistanceTest/DistanceTest.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="747" selectionTopPixel="603"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ColorSensorTest.java" partName="ColorSensorTest.java" path="/home/lego/Robolabra/Robotti/samples/ColorSensorTest/ColorSensorTest.java" title="ColorSensorTest.java" tooltip="samples/ColorSensorTest/ColorSensorTest.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/samples/ColorSensorTest/ColorSensorTest.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="560" selectionTopPixel="317"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Tune.java" partName="Tune.java" path="/home/lego/Robolabra/Robotti/samples/Tune/Tune.java" title="Tune.java" tooltip="samples/Tune/Tune.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/samples/Tune/Tune.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="776" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MotorTester.java" partName="MotorTester.java" path="/home/lego/Robolabra/Robotti/samples/MotorTester/MotorTester.java" title="MotorTester.java" tooltip="samples/MotorTester/MotorTester.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/samples/MotorTester/MotorTester.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3188" selectionTopPixel="1033"/>
+</editor>
 </editors>
 <views>
-<view id="org.eclipse.jdt.ui.TypeHierarchy" partName="Hierarchy">
-<viewState hidefields="false" hidelocaltypes="false" hidenonpublic="false" hidestatic="false" link_editors="0" mv_vertical_scroll="0" orientation="3" qualified_names="0" ratio="350" showinherited="false" sortbydefiningtype="false" vertical_scroll="0" view="2" workingSetName="Aggregate for window 1514567477077"/>
-</view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<columnWidths org.eclipse.ui.ide.locationField="73" org.eclipse.ui.ide.markerType="993" org.eclipse.ui.ide.pathField="143" org.eclipse.ui.ide.resourceField="108" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
+<expanded>&#x0A;<category IMemento.internal.id="Errors (2 items)"/>
+<category IMemento.internal.id="Errors"/>
+</expanded>
+<columnWidths org.eclipse.ui.ide.locationField="73" org.eclipse.ui.ide.markerType="1068" org.eclipse.ui.ide.pathField="143" org.eclipse.ui.ide.resourceField="108" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
@@ -46,40 +102,8 @@
 <visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
 </viewState>
 </view>
-<view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
-<viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="Aggregate for window 1514567477077">
-<customFilters userDefinedPatternsEnabled="false">
-<xmlDefinedFilters>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.StaticsFilter" isEnabled="false"/>
-<child filterId="org.eclipse.pde.ui.ExternalPluginLibrariesFilter1" isEnabled="true"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonSharedProjectsFilter" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaElementFilter" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.ContainedLibraryFilter" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.CuAndClassFileFilter" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaProjectsFilter" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter" isEnabled="true"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter" isEnabled="true"/>
-<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter" isEnabled="true"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.FieldsFilter" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter" isEnabled="true"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*" isEnabled="true"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter" isEnabled="true"/>
-<child filterId="org.eclipse.pde.ui.BinaryProjectFilter1" isEnabled="false"/>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter" isEnabled="true"/>
-</xmlDefinedFilters>
-</customFilters>
-</viewState>
-</view>
-<view id="org.eclipse.ui.internal.introview" partName="Welcome">
-<viewState>
-<presentation currentPage="root" restore="true"/>
-<standbyPart/>
-</viewState>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
 </view>
 <view id="org.eclipse.mylyn.tasks.ui.views.tasks" partName="Task List">
 <viewState linkWithEditor="true" presentation="org.eclipse.mylyn.tasks.ui.categorized">
@@ -99,7 +123,7 @@
 <view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.ui.views.ContentOutline" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -152,58 +176,52 @@
 <perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
 <perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
-<view id="org.eclipse.jdt.ui.PackageExplorer"/>
-<view id="org.eclipse.jdt.ui.TypeHierarchy"/>
 <view id="org.eclipse.ui.views.ProblemView"/>
 <view id="org.eclipse.jdt.ui.JavadocView"/>
 <view id="org.eclipse.jdt.ui.SourceView"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <view id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
-<view id="org.eclipse.ui.internal.introview"/>
 <fastViewBars/>
 <layout>
 <mainWindow>
 <info folder="true" part="left">
-<folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
-<page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
-<page content="org.eclipse.jdt.ui.TypeHierarchy" label="Hierarchy"/>
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.junit.ResultView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-<part id="1"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@17b60b6" ratio="0.75" ratioLeft="708" ratioRight="236" relationship="2" relative="left">
-<folder activePageID="org.eclipse.ui.internal.introview" appearance="2" expanded="2">
-<page content="org.eclipse.ui.internal.introview" label="Welcome"/>
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.09640718" ratioLeft="161" ratioRight="1509" relationship="2" relative="left"/>
+<info part="org.eclipse.ui.editorss" ratio="0.15295966" ratioLeft="292" ratioRight="1617" relationship="2" relative="left"/>
 <info folder="true" part="bottom" ratio="0.7488" ratioLeft="468" ratioRight="157" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.ProblemView" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
 <page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
-<page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
+<part id="3"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@9c15d2" ratio="0.75" ratioLeft="531" ratioRight="177" relationship="2" relative="org.eclipse.ui.editorss">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@9c15d2" ratio="0.848088" ratioLeft="1619" ratioRight="290" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.mylyn.tasks.ui.views.tasks" appearance="2" expanded="2">
 <page content="org.eclipse.mylyn.tasks.ui.views.tasks" label="Task List"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -226,7 +244,171 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/org.lejos.example/src/org/lejos/example/HelloWorld.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Robotti/src/robotti/Robotti.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ant.ui.internal.editor.AntEditor" path="/samples/SpeedTest/build.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/samples/SpeedTest/SpeedTest.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/samples/RCPilot/RCPilot.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ant.ui.internal.editor.AntEditor" path="/samples/BumperCar/build.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/samples/BumperCar/BumperCar.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/samples/DistanceTest/DistanceTest.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/samples/ColorSensorTest/ColorSensorTest.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/samples/Tune/Tune.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/samples/MotorTester/MotorTester.java"/>
+</editors>
+<item historyLabel="HelloWorld.java" index="0">
+<position info="not_deleted" x="254" y="0"/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position/>
+</item>
+<item historyLabel="build.xml" index="2">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SpeedTest.java" index="3">
+<position info="not_deleted" x="487" y="0"/>
+</item>
+<item historyLabel="RCPilot.java" index="4">
+<position info="not_deleted" x="918" y="0"/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position/>
+</item>
+<item historyLabel="SpeedTest.java" index="3">
+<position info="not_deleted" x="487" y="0"/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position info="not_deleted" x="334" y="0"/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position info="not_deleted" x="322" y="0"/>
+</item>
+<item historyLabel="build.xml" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="BumperCar.java" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="BumperCar.java" index="6">
+<position info="not_deleted" x="510" y="0"/>
+</item>
+<item historyLabel="BumperCar.java" index="6">
+<position info="not_deleted" x="426" y="9"/>
+</item>
+<item historyLabel="BumperCar.java" index="6">
+<position info="not_deleted" x="1398" y="10"/>
+</item>
+<item historyLabel="BumperCar.java" index="6">
+<position info="not_deleted" x="1608" y="0"/>
+</item>
+<item historyLabel="BumperCar.java" index="6">
+<position info="not_deleted" x="829" y="12"/>
+</item>
+<item historyLabel="BumperCar.java" index="6">
+<position info="not_deleted" x="1198" y="0"/>
+</item>
+<item historyLabel="BumperCar.java" index="6">
+<position info="not_deleted" x="660" y="0"/>
+</item>
+<item historyLabel="DistanceTest.java" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="DistanceTest.java" index="7">
+<position info="not_deleted" x="747" y="0"/>
+</item>
+<item historyLabel="ColorSensorTest.java" index="8">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ColorSensorTest.java" index="8">
+<position info="not_deleted" x="560" y="0"/>
+</item>
+<item historyLabel="Tune.java" index="9">
+<position info="not_deleted" x="776" y="0"/>
+</item>
+<item historyLabel="MotorTester.java" index="10">
+<position info="not_deleted" x="3188" y="0"/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position info="not_deleted" x="1787" y="0"/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position info="not_deleted" x="308" y="0"/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position info="not_deleted" x="685" y="0"/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position info="not_deleted" x="756" y="0"/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position info="not_deleted" x="800" y="0"/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position info="not_deleted" x="1787" y="0"/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position info="not_deleted" x="977" y="0"/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position info="not_deleted" x="234" y="0"/>
+</item>
+<item historyLabel="Robotti.java" index="1">
+<position info="not_deleted" x="1826" y="0"/>
+</item>
+<item active="true" historyLabel="Robotti.java" index="1">
+<position info="not_deleted" x="650" y="0"/>
+</item>
+</navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
@@ -239,11 +421,43 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@17b60b6"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MotorTester.java" tooltip="samples/MotorTester/MotorTester.java">
+<persistable path="/samples/MotorTester/MotorTester.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Tune.java" tooltip="samples/Tune/Tune.java">
+<persistable path="/samples/Tune/Tune.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ColorSensorTest.java" tooltip="samples/ColorSensorTest/ColorSensorTest.java">
+<persistable path="/samples/ColorSensorTest/ColorSensorTest.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DistanceTest.java" tooltip="samples/DistanceTest/DistanceTest.java">
+<persistable path="/samples/DistanceTest/DistanceTest.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BumperCar.java" tooltip="samples/BumperCar/BumperCar.java">
+<persistable path="/samples/BumperCar/BumperCar.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ant.ui.internal.editor.AntEditor" name="build.xml" tooltip="samples/BumperCar/build.xml">
+<persistable path="/samples/BumperCar/build.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RCPilot.java" tooltip="samples/RCPilot/RCPilot.java">
+<persistable path="/samples/RCPilot/RCPilot.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SpeedTest.java" tooltip="samples/SpeedTest/SpeedTest.java">
+<persistable path="/samples/SpeedTest/SpeedTest.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ant.ui.internal.editor.AntEditor" name="build.xml" tooltip="samples/SpeedTest/build.xml">
+<persistable path="/samples/SpeedTest/build.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Robotti.java" tooltip="Test/src/robotti/Robotti.java">
+<persistable path="/Test/src/robotti/Robotti.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HelloWorld.java" tooltip="org.lejos.example/src/org/lejos/example/HelloWorld.java">
+<persistable path="/org.lejos.example/src/org/lejos/example/HelloWorld.java"/>
+</file>
 <file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HelloWorld.java" tooltip="/home/lego/Robolabra/Robotti/org.lejos.example/src/org/lejos/example/HelloWorld.java">
 <persistable uri="file:/home/lego/Robolabra/Robotti/org.lejos.example/src/org/lejos/example/HelloWorld.java"/>
 </file>
