@@ -1,0 +1,194 @@
+package robotti;
+
+import lejos.nxt.*;
+
+/**
+ * Example leJOS Project with an ant build file
+ *
+ */
+
+/**
+Ohjelmassa on ensin toiminnallisuus kynän korkeuden hienosäätöön, jotta piirturi toimii tarkoituksenmukaisesti. (metodi asetaKorkeus)
+Tämän jälkeen piirturia on mahdollista käyttää manuaalisesti nappien sekä kosketussensorien avulla.
+En löytänyt tapaa poistaa listeneria moottorista A, joten deaktivoin sen booleanin moottoriA avulla.
+ */
+public class Robotti {
+
+	static boolean moottoriA;
+	
+	//B range [0, 850]
+	//C range [0, 500]
+	static final int rajaB = 850;
+	static final int rajaC = 500;
+	
+	//alas = A forward
+	//vasemmalle = B forward
+	//taakse = C forward
+	
+	//lähtöpaikka NXT:n vieressä!
+	
+	public static void main(String[] args) {	
+		//vapaaPiirtaminen(true, false);
+		piirraViiva(100, 100, 700, 400, 0, 0);
+	}
+	
+	public static void vapaaPiirtaminen() {
+		vapaaPiirtaminen(true, true);
+	}
+	
+	public static void vapaaPiirtaminen(final boolean rajoitettu, boolean nollataan) {
+		//metodin parametrit ovat testausta varten!
+		
+		asetaKorkeus();
+		
+		Motor.B.setSpeed(90);
+		Motor.C.setSpeed(90);
+		
+		System.out.println("Nyt voit piirtaa");
+		System.out.println("vapaasti!");
+		
+		//piirturin siirtäminen vasemmalle
+		Button.LEFT.addButtonListener(new ButtonListener() {
+			public void buttonPressed(Button b) {
+				if (rajoitettu) {
+					Motor.B.rotateTo(rajaB, true);
+				} else {
+					Motor.B.forward();
+				}
+			}
+			
+			public void buttonReleased(Button b) {
+				Motor.B.stop();
+			}
+		});
+		
+		//piirturin siirtäminen oikealle
+		Button.RIGHT.addButtonListener(new ButtonListener() {
+			public void buttonPressed(Button b) {
+				if (rajoitettu) {
+					Motor.B.rotateTo(0, true);
+				} else {
+					Motor.B.backward();
+				}
+			}
+			
+			public void buttonReleased(Button b) {
+				Motor.B.stop();
+			}
+		});
+		
+		//kynän siirtäminen eteen
+		SensorPort.S1.addSensorPortListener(new SensorPortListener() {
+			public void stateChanged(SensorPort p, int i, int f) {
+				TouchSensor sensor = new TouchSensor(p);
+				if (sensor.isPressed()) {
+					if (rajoitettu) {
+						Motor.C.rotateTo(rajaC, true);
+					} else {
+						Motor.C.forward();
+					}
+				} else {
+					Motor.C.stop();
+				}
+			}
+		});
+		
+		//kynän siirtäminen taakse
+		SensorPort.S2.addSensorPortListener(new SensorPortListener() {
+			public void stateChanged(SensorPort p, int i, int f) {
+				TouchSensor sensor = new TouchSensor(p);
+				if (sensor.isPressed()) {
+					if (rajoitettu) {
+						Motor.C.rotateTo(0, true);
+					} else {
+						Motor.C.backward();
+					}
+				} else {
+					Motor.C.stop();
+				}
+			}
+		});
+		
+		Button.ESCAPE.waitForPressAndRelease();
+		if (nollataan) nollaaRobotti();
+	}
+	
+	public static void nollaaRobotti() {
+		//kynä takaisin ylös
+		Motor.A.rotateTo(0);
+		
+		//siirretään piirturi eteen ja oikealle
+		Motor.B.setSpeed(90);
+		Motor.B.rotateTo(0);
+		Motor.C.setSpeed(90);
+		Motor.C.rotateTo(0);
+	}
+	
+	public static void asetaKorkeus() {
+		
+		moottoriA = true;
+		
+		//riville mahtuu 16 merkkiä
+		System.out.println("Aseta kynan");
+		System.out.println("korkeus ja paina");
+		System.out.println("enter");
+		System.out.println("<- alas  ylos ->");
+		
+		//kynän siirtäminen alaspäin
+		Button.LEFT.addButtonListener(new ButtonListener() {
+			public void buttonPressed(Button b) {
+				if (moottoriA) {
+					Motor.A.forward();
+				}
+			}
+			
+			public void buttonReleased(Button b) {
+				Motor.A.stop();
+			}
+		});
+		
+		//kynän siirtäminen ylöspäin
+		Button.RIGHT.addButtonListener(new ButtonListener() {
+			public void buttonPressed(Button b) {
+				if (moottoriA) {
+					Motor.A.backward();
+				}
+			}
+			
+			public void buttonReleased(Button b) {
+				Motor.A.stop();
+			}
+		});
+		
+		Button.ENTER.waitForPressAndRelease();
+		moottoriA = false;
+		LCD.clear();
+
+	}
+	
+	public static void piirraViiva(int lahtoX, int lahtoY, int loppuX, int loppuY, int alarajaA, int ylarajaA) {
+		
+		Motor.A.rotateTo(alarajaA);
+		
+		Motor.B.setSpeed(90);
+		Motor.C.setSpeed(90);
+		
+		Motor.B.rotateTo(lahtoX, true);
+		Motor.C.rotateTo(lahtoY);
+		
+		int leveys = loppuX - lahtoX;
+		int korkeus = loppuY - lahtoY;
+		int suurin = Math.max(korkeus, leveys);
+		
+		//moottoreiden pitää liikkua eri pituiset osuudet yhtä nopeasti!
+		Motor.B.setSpeed((90 * leveys) / suurin);
+		Motor.C.setSpeed((90 * korkeus) / suurin);
+
+		Motor.A.rotateTo(ylarajaA);
+		Motor.B.rotateTo(loppuX, true);
+		Motor.C.rotateTo(loppuY);
+		
+		Motor.A.rotateTo(alarajaA);
+	}
+	
+}

@@ -1,0 +1,142 @@
+package robotti;
+
+import lejos.nxt.*;
+
+/**
+ * Example leJOS Project with an ant build file
+ *
+ */
+
+/**
+Ohjelmassa on ensin toiminnallisuus kynän korkeuden hienosäätöön, jotta piirturi toimii tarkoituksenmukaisesti. (metodi asetaKorkeus)
+Tämän jälkeen piirturia on mahdollista käyttää manuaalisesti nappien sekä kosketussensorien avulla.
+En löytänyt tapaa poistaa listeneria moottorista A, joten deaktivoin sen booleanin moottoriA avulla.
+ */
+public class Robotti {
+
+	static boolean moottoriA;
+	
+	//B range [0, 850]
+	//C range [0, 500]
+	static final int rajaB = 850;
+	static final int rajaC = 500;
+	
+	public static void main(String[] args) {
+		vapaaPiirtaminen(false);
+	}
+	
+	public static void vapaaPiirtaminen(boolean nollataan) {
+		//alas = A forward
+		//vasemmalle = B forward
+		//taakse = C forward
+		Motor.B.setSpeed(90);
+		Motor.C.setSpeed(90);
+		asetaKorkeus();
+		
+		//lähtöpaikka NXT:n vieressä!
+		
+		System.out.println("Nyt voit piirtää");
+		System.out.println("vapaasti!");
+		
+		//piirturin siirtäminen vasemmalle
+		Button.LEFT.addButtonListener(new ButtonListener() {
+			public void buttonPressed(Button b) {
+				Motor.B.rotateTo(rajaB);
+			}
+			
+			public void buttonReleased(Button b) {
+				Motor.B.stop();
+			}
+		});
+		
+		//piirturin siirtäminen oikealle
+		Button.RIGHT.addButtonListener(new ButtonListener() {
+			public void buttonPressed(Button b) {
+				Motor.B.rotateTo(0);
+			}
+			
+			public void buttonReleased(Button b) {
+				Motor.B.stop();
+			}
+		});
+		
+		//kynän siirtäminen eteen
+		SensorPort.S1.addSensorPortListener(new SensorPortListener() {
+			public void stateChanged(SensorPort p, int i, int f) {
+				TouchSensor sensor = new TouchSensor(p);
+				if (sensor.isPressed()) {
+					Motor.C.rotateTo(rajaC);
+				} else {
+					Motor.C.stop();
+				}
+			}
+		});
+		
+		//kynän siirtäminen taakse
+		SensorPort.S2.addSensorPortListener(new SensorPortListener() {
+			public void stateChanged(SensorPort p, int i, int f) {
+				TouchSensor sensor = new TouchSensor(p);
+				if (sensor.isPressed()) {
+					Motor.C.rotateTo(0);
+				} else {
+					Motor.C.stop();
+				}
+			}
+		});
+		
+		Button.ESCAPE.waitForPressAndRelease();
+		if (nollataan) nollaaRobotti();
+	}
+	
+	public static void nollaaRobotti() {
+		//kynä takaisin ylös
+		Motor.A.rotateTo(0);
+		
+		//siirretään piirturi eteen ja oikealle
+		Motor.B.setSpeed(90);
+		Motor.B.rotateTo(0);
+		Motor.C.setSpeed(90);
+		Motor.C.rotateTo(0);
+	}
+	
+	public static void asetaKorkeus() {
+		moottoriA = true;
+		
+		//riville mahtuu 16 merkkiä
+		System.out.println("Aseta kynan");
+		System.out.println("korkeus ja paina");
+		System.out.println("enter");
+		System.out.println("<- alas  ylos ->");
+		
+		//kynän siirtäminen alaspäin
+		Button.LEFT.addButtonListener(new ButtonListener() {
+			public void buttonPressed(Button b) {
+				if (moottoriA) {
+					Motor.A.forward();
+				}
+			}
+			
+			public void buttonReleased(Button b) {
+				Motor.A.stop();
+			}
+		});
+		
+		//kynän siirtäminen ylöspäin
+		Button.RIGHT.addButtonListener(new ButtonListener() {
+			public void buttonPressed(Button b) {
+				if (moottoriA) {
+					Motor.A.backward();
+				}
+			}
+			
+			public void buttonReleased(Button b) {
+				Motor.A.stop();
+			}
+		});
+		
+		Button.ENTER.waitForPressAndRelease();
+		moottoriA = false;
+		LCD.clear();
+
+	}
+}
