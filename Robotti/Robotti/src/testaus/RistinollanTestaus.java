@@ -1,6 +1,8 @@
+/*
+
 package testaus;
 
-import robotti.Ristinolla;
+import robotti.*;
 import java.util.Scanner;
 
 public class RistinollanTestaus {
@@ -19,9 +21,11 @@ public class RistinollanTestaus {
 			peli.pelaa(indeksi);
 		}
 		
-                System.out.println(peli.ruudukkoString());
+        System.out.println(peli.ruudukkoString());
 		System.out.println("Voittaja: " + peli.merkki(peli.voittaja()));
 		
 	}
 	
 }
+
+*/

@@ -23,6 +23,32 @@ public class Robotti {
 		Motor.C.setSpeed(90);
 		asetaKorkeus();
 		
+		//B range [0, 800]
+		//C range [0, 500]
+		//lähtöpaikka NXT:n vieressä!
+		
+		Button.LEFT.addButtonListener(new ButtonListener() {
+			public void buttonPressed(Button b) {
+				Motor.B.rotate(100);
+			}
+			
+			public void buttonReleased(Button b) {
+				
+			}
+		});
+		
+		Button.RIGHT.addButtonListener(new ButtonListener() {
+			public void buttonPressed(Button b) {
+				Motor.B.rotate(10);
+			}
+			
+			public void buttonReleased(Button b) {
+				
+			}
+		});
+		
+		/*
+		
 		//piirturin siirtäminen vasemmalle
 		Button.LEFT.addButtonListener(new ButtonListener() {
 			public void buttonPressed(Button b) {
@@ -69,7 +95,11 @@ public class Robotti {
 			}
 		});
 		
+		*/
+		
 		Button.ESCAPE.waitForPressAndRelease();
+		Motor.B.rotateTo(0);
+		Motor.C.rotateTo(0);
 	}
 	
 	public static void asetaKorkeus() {
@@ -105,5 +135,6 @@ public class Robotti {
 		SensorPort.S1.reset();
 		SensorPort.S2.reset();
 		LCD.clear();
+
 	}
 }
