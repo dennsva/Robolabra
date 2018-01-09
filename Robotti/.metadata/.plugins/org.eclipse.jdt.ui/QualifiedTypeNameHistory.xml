@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="lejos.nxt.Button"/>
-<fullyQualifiedTypeName name="lejos.nxt.Motor"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="lejos.nxt.Motor"/>
+<fullyQualifiedTypeName name="lejos.util.Delay"/>
 </qualifiedTypeNameHistroy>
