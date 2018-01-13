@@ -3,21 +3,20 @@
 package testaus;
 
 import robotti.*;
-import java.util.Scanner;
 
 public class RistinollanTestaus {
 
 	public static void main(String[] args) {	
 		
 		Ristinolla peli = new Ristinolla();
-		Scanner lukija = new Scanner(System.in);
+		Pelaaja pelaaja1 = new Satunnaispelaaja();
+		Pelaaja pelaaja2 = new Satunnaispelaaja();
 	
 		while (peli.voittaja() == 0) {
 			System.out.println(peli.ruudukkoString());
 			System.out.println("Vuorossa: " + peli.merkki(peli.vuorossa()));
 			System.out.println("Pelaa indeksiin:");
 			
-			int indeksi = Integer.parseInt(lukija.nextLine());
 			peli.pelaa(indeksi);
 		}
 		

@@ -18,11 +18,34 @@ public class Robotti {
 	public static void main(String[] args) {	
 		Piirturi piirturi = new Piirturi();
 		
-		piirturi.asetaKorkeus();
 		//piirturi.vapaaPiirtaminen();
-		piirturi.piirraViiva(100, 100, 500, 800);
-		piirturi.piirraViiva(100, 200, 400, 300);
+		//piirturi.ympyraTesti();
+		//piirturi.asetaKorkeus();
+		
+		//piirturi.piirraViiva(100, 100, 500, 800);
+		//piirturi.piirraViiva(100, 200, 400, 300);
+		//piirturi.nollaaRobotti();
+		
+		//piirturi.asetaKorkeus(false);
+		//piirturi.vapaaPiirtaminen(false);
+		
+		//for (int i = 0; i < 10; i++) piirturi.piirraNumero(i, 0, 0, 200, 400);
+		ristinolla();
+	}
+	
+	public static void piirra() {
+		Piirturi piirturi = new Piirturi();
+		piirturi.asetaKorkeus();
+		piirturi.vapaaPiirtaminen();
 		piirturi.nollaaRobotti();
+	}
+	
+	public static void ristinolla() {
+		Pelaaja pelaaja1 = new Satunnaispelaaja(1);
+		Pelaaja pelaaja2 = new Satunnaispelaaja(2);
+		
+		Ristinolla peli = new Ristinolla(pelaaja1, pelaaja2);
+		peli.aloita();
 	}
 
 }

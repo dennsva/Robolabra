@@ -2,6 +2,8 @@ package robotti;
 
 import java.util.ArrayList;
 
+import lejos.nxt.Button;
+
 public class Ristinolla {
 	
 	//ruudukon indeksit:
@@ -14,12 +16,38 @@ public class Ristinolla {
 	// 2 on pelaaja 2
 	
 	private ArrayList<Integer> ruudukko;
+	private Ristinollapiirturi piirturi;
+	private Pelaaja pelaaja1;
+	private Pelaaja pelaaja2;
 	
-	public Ristinolla() {
+	public Ristinolla(Pelaaja pelaaja1, Pelaaja pelaaja2) {
 		this.ruudukko = new ArrayList<Integer>();
 		for (int i = 0; i < 9; i++) {
 			ruudukko.add(0);
 		}
+		this.piirturi = new Ristinollapiirturi();
+		this.pelaaja1 = pelaaja1;
+		this.pelaaja2 = pelaaja2;
+	}
+	
+	public ArrayList<Integer> getRuudukko() {
+		return ruudukko;
+	}
+	
+	public void aloita() {
+		piirturi.luoKentta(0, 0, 300, 300);
+		piirturi.piirraKentta();
+		while (peliKaynnissa()) {
+			pelaa();
+		}
+		if (voittaja() > 0) {
+			viivaaVoittaja();
+			System.out.println("Voittaja on " + merkki(voittaja()));
+		} else {
+			System.out.println("Tasapeli!");
+		}
+		Button.ENTER.waitForPressAndRelease();
+		piirturi.nollaaRobotti();
 	}
 	
 	public String merkki(int pelaaja) {
@@ -52,11 +80,20 @@ public class Ristinolla {
 		return 1;
 	}
 	
-	public void pelaa(int indeksi) {
-            if (voittaja() > 0) return;
-            if (ruudukko.get(indeksi) > 0) return;
+	public Pelaaja vuorossaPelaaja() {
+		if (vuorossa() == 2) return pelaaja2;
+		return pelaaja1;
+	}
 	
-            ruudukko.set(indeksi, vuorossa());
+	public boolean pelaa() {
+		int indeksi = vuorossaPelaaja().pelaa(ruudukko);
+		if (indeksi < 0 || indeksi >= 9) return false;
+        if (voittaja() > 0) return false;
+        if (ruudukko.get(indeksi) > 0) return false;
+        
+        piirturi.piirraMerkki(indeksi, vuorossa());
+        ruudukko.set(indeksi, vuorossa());
+        return true;
 	}
 	
 	public int voittorivi(int indeksi1, int indeksi2, int indeksi3) {
@@ -76,30 +113,59 @@ public class Ristinolla {
 	}
 	
 	public int voittaja() {
+		return voittaja(false);
+	}
+	
+	public int viivaaVoittaja() {
+		return voittaja(true);
+	}
+	
+	public int voittaja(boolean viivaa) {
 		//rivit
-		for (int rivi = 0; rivi < 3; rivi++) {
-			if (voittorivi(3 * rivi, 3 * rivi + 1, 3 * rivi + 2) > 0) {
-				return voittorivi(3 * rivi, 3 * rivi + 1, 3 * rivi + 2);
-			}
+		if (voittorivi(0, 1, 2) > 0) {
+			if (viivaa) piirturi.viivaaRivi(0);
+			return voittorivi(0, 1, 2);
+		}
+		if (voittorivi(3, 4, 5) > 0) {
+			if (viivaa) piirturi.viivaaRivi(1);
+			return voittorivi(3, 4, 5);
+		}
+		if (voittorivi(6, 7, 8) > 0) {
+			if (viivaa) piirturi.viivaaRivi(2);
+			return voittorivi(6, 7, 8);
 		}
 		
 		//sarakkeet
-		for (int sarake = 0; sarake < 3; sarake++) {
-			if (voittorivi(sarake, 3 + sarake, 6 + sarake) > 0) {
-				return voittorivi(sarake, 3 + sarake, 6 + sarake);
-			}
+		if (voittorivi(0, 3, 6) > 0) {
+			if (viivaa) piirturi.viivaaRivi(3);
+			return voittorivi(0, 3, 6);
+		}
+		if (voittorivi(1, 4, 7) > 0) {
+			if (viivaa) piirturi.viivaaRivi(4);
+			return voittorivi(1, 4, 7);
+		}
+		if (voittorivi(2, 5, 8) > 0) {
+			if (viivaa) piirturi.viivaaRivi(5);
+			return voittorivi(2, 5, 8);
 		}
 		
 		//diagonaalit
 		if (voittorivi(0, 4, 8) > 0) {
+			if (viivaa) piirturi.viivaaRivi(6);
 			return voittorivi(0, 4, 8);
 		}
 		if (voittorivi(2, 4, 6) > 0) {
+			if (viivaa) piirturi.viivaaRivi(7);
 			return voittorivi(2, 4, 6);
 		}
 		
 		//ei voittajaa
 		return 0;
+	}
+	
+	public boolean peliKaynnissa() {
+		if (voittaja() == 0 && pelattuja(1) + pelattuja(2) < 9) return true;
+		return false;
 	}
 	
 }

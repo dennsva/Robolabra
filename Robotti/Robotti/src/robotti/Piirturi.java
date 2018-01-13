@@ -43,7 +43,6 @@ public class Piirturi {
 	public void vapaaPiirtaminen(final boolean rajoitettu) {
 		//metodin parametrit ovat testausta varten!
 		
-		asetaKorkeus();
 		asetaNopeudet(vakionopeus);
 		
 		System.out.println("Nyt voit piirtaa");
@@ -125,8 +124,16 @@ public class Piirturi {
 		return Motor.C.getPosition();
 	}
 	
-	private double etaisyysPisteeseen(int x, int y) {
+	/**Palauttaa piirturin ja annetun pisteen valisen etaisyyden.*/
+	public double etaisyysPisteeseen(int x, int y) {
 		return Math.sqrt(Math.pow(getX() - x, 2) + Math.pow(getY() - y, 2));
+	}
+	
+	/**Palauttaa true jos ja vain jos piste (x, y) on ruudukossa.*/
+	public boolean ruudukossa(int x, int y) {
+		if (0 <= x && x <= rajaB
+				&& 0 <= y && y <= rajaC) return true;
+		return false;
 	}
 
 	/**Nostaa kynan ja siirtaa piirturin oletusasentoon.*/
@@ -148,15 +155,13 @@ public class Piirturi {
 	
 	/**Liikuttaa piirturia suoraan parametrien maaraamaan pisteeseen. X valilla [0, 850] ja Y valilla [0, 500].*/
 	public void liikuta(int loppuX, int loppuY) {
-		if (loppuX < 0) loppuX = 0;
-		if (loppuX > rajaB) loppuX = rajaB;
-		if (loppuY < 0) loppuY = 0;
-		if (loppuY > rajaC) loppuY = rajaC;
+		if (!ruudukossa(loppuX, loppuY)) return;
 		
 		//liikutaan lyhintä reittiä
 		int leveys = Math.abs(loppuX - getX());
 		int korkeus = Math.abs(loppuY - getY());
 		float suurin = (float) Math.max(korkeus, leveys);
+		if (suurin == 0) return;
 		
 		//moottoreiden pitää liikkua eri pituiset osuudet yhtä nopeasti! maksiminopeus vakionopeus.
 		System.out.println((vakionopeus * leveys) / suurin);
@@ -191,8 +196,12 @@ public class Piirturi {
 		Motor.C.setSpeed(nopeusY);
 	}
 	
-	/**Antaa kayttajalle mahdollisuuden hienosaataa kynan korkeus.*/
 	public void asetaKorkeus() {
+		asetaKorkeus(true);
+	}
+	
+	/**Antaa kayttajalle mahdollisuuden hienosaataa kynan korkeus.*/
+	public void asetaKorkeus(boolean nostetaan) {
 		
 		moottoriA = true;
 		
@@ -232,12 +241,13 @@ public class Piirturi {
 		moottoriA = false;
 		rajaA = Motor.A.getPosition();
 		LCD.clear();
+		if (nostetaan) nostaKyna();
 	}
 	
 	/**Piirtaa suoran viivan parametrien maaraamien pisteiden valille.*/
 	public void piirraViiva(int lahtoX, int lahtoY, int loppuX, int loppuY) {
-		
-		nostaKyna();
+		if (!ruudukossa(lahtoX, lahtoY)) return;
+		if (!ruudukossa(loppuX, loppuY)) return;
 		
 		//aloitetaan lähimmasta päästa
 		if (etaisyysPisteeseen(loppuX, loppuY) < etaisyysPisteeseen(lahtoX, lahtoY)) {
@@ -245,10 +255,93 @@ public class Piirturi {
 			return;
 		}
 		
-		liikuta(lahtoX, lahtoY);
+		if (etaisyysPisteeseen(lahtoX, lahtoY) > 0) {
+			nostaKyna();
+			liikuta(lahtoX, lahtoY);
+		}
 		laskeKyna();
 		liikuta(loppuX, loppuY);
-		nostaKyna();
+	}
+	
+	/**Piirtaa numeron ruutuun, jonka maaraa koordinaatit (x1, y1) ja (x2, y2).*/
+	public void piirraNumero(int numero, int x1, int y1, int x2, int y2) {
+		if (!ruudukossa(x1, y1)) return;
+		if (!ruudukossa(x2, y2)) return;
+		
+		if (numero < 0 || numero > 9) return;
+		
+		//vaihdetaan x:ät, sillä x-akseli menee oikealta vasemmalle
+		int vanhax1 = x1;
+		x1 = x2;
+		x2 = vanhax1;
+
+		int ykeski = (y1 + y2) / 2;
+		
+		if (numero == 0) {
+			piirraViiva(x1, y2, x2, y2);
+			piirraViiva(x2, y2, x2, y1);
+			piirraViiva(x2, y1, x1, y1);
+			piirraViiva(x1, y1, x1, y2);
+		} else if (numero == 1) {
+			piirraViiva(x2, y1, x2, y2);
+		} else if (numero == 2) {
+			piirraViiva(x1, y2, x2, y2);
+			piirraViiva(x2, y2, x2, ykeski);
+			piirraViiva(x2, ykeski, x1, ykeski);
+			piirraViiva(x1, ykeski, x1, y1);
+			piirraViiva(x1, y1, x2, y1);
+		} else if (numero == 3) {
+			piirraViiva(x1, y2, x2, y2);
+			piirraViiva(x2, y2, x2, y1);
+			piirraViiva(x2, y1, x1, y1);
+			piirraViiva(x1, ykeski, x2, ykeski);
+		} else if (numero == 4) {
+			piirraViiva(x1, y2, x1, ykeski);
+			piirraViiva(x1, ykeski, x2, ykeski);
+			piirraViiva(x2, y2, x2, y1);
+		} else if (numero == 5) {
+			piirraViiva(x2, y2, x1, y2);
+			piirraViiva(x1, y2, x1, ykeski);
+			piirraViiva(x1, ykeski, x2, ykeski);
+			piirraViiva(x2, ykeski, x2, y1);
+			piirraViiva(x2, y1, x1, y1);
+		} else if (numero == 6) {
+			piirraViiva(x1, ykeski, x2, ykeski);
+			piirraViiva(x2, ykeski, x2, y1);
+			piirraViiva(x2, y1, x1, y1);
+			piirraViiva(x1, y1, x1, y2);
+			piirraViiva(x1, y2, x2, y2);
+		} else if (numero == 7) {
+			piirraViiva(x1, y2, x2, y2);
+			piirraViiva(x2, y2, x2, y1);
+		} else if (numero == 8) {
+			piirraViiva(x1, y2, x2, y2);
+			piirraViiva(x2, y2, x2, y1);
+			piirraViiva(x2, y1, x1, y1);
+			piirraViiva(x1, y1, x1, y2);
+			piirraViiva(x1, ykeski, x2, ykeski);
+		} else if (numero == 9) {
+			piirraViiva(x2, ykeski, x1, ykeski);
+			piirraViiva(x1, ykeski, x1, y2);
+			piirraViiva(x1, y2, x2, y2);
+			piirraViiva(x2, y2, x2, y1);
+			piirraViiva(x2, y1, x1, y1);
+		}
+	}
+	
+	public void ympyraTesti() {
+		int t = 0;
+		Delay delay = new Delay();
+		Motor.B.setAcceleration(50);
+		Motor.C.setAcceleration(50);
+		Motor.B.forward();
+		Motor.C.forward();
+		while (t < 10000) {
+			Motor.B.setSpeed((int) (-90 * Math.sin(6 * t / 10000)));
+			Motor.C.setSpeed((int) (90 * Math.cos(6 * t / 10000)));
+			delay.msDelay(10);
+			t += 10;
+		}
 	}
 	
 }

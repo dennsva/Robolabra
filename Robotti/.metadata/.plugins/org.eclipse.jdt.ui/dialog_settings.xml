@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item value="2" key="TypeHierarchyViewPart.hierarchyview"/>
-	<item value="false" key="TypeHierarchyViewPart.qualifiednames"/>
 	<item value="3" key="TypeHierarchyViewPart.orientation"/>
+	<item value="false" key="TypeHierarchyViewPart.qualifiednames"/>
 	<item value="false" key="TypeHierarchyViewPart.linkeditors"/>
 	<item value="/home/lego/Robolabra/Robotti/wiiusej" key="org.eclipse.jdt.ui.last.external.project"/>
 	<section name="OptionalMessageDialog.hide.">
@@ -45,86 +45,86 @@
 		<section name="projects">
 			<section name="classes">
 				<item value="/home/lego/Robolabra/Robotti/classes/doc" key="destdir"/>
-				<item value="/home/lego/Robolabra/Robotti/classes/javadoc.xml" key="antpath"/>
 				<item value="" key="href"/>
+				<item value="/home/lego/Robolabra/Robotti/classes/javadoc.xml" key="antpath"/>
 			</section>
 			<section name="JavaCV">
 				<item value="/home/lego/Robolabra/Robotti/JavaCV/doc" key="destdir"/>
-				<item value="/home/lego/Robolabra/Robotti/JavaCV/javadoc.xml" key="antpath"/>
 				<item value="" key="href"/>
+				<item value="/home/lego/Robolabra/Robotti/JavaCV/javadoc.xml" key="antpath"/>
 			</section>
 			<section name="pctools">
 				<item value="/home/lego/Robolabra/Robotti/pctools/doc" key="destdir"/>
-				<item value="/home/lego/Robolabra/Robotti/pctools/javadoc.xml" key="antpath"/>
 				<item value="" key="href"/>
+				<item value="/home/lego/Robolabra/Robotti/pctools/javadoc.xml" key="antpath"/>
 			</section>
 			<section name="TuioTrackerNXT">
 				<item value="/home/lego/Robolabra/Robotti/TuioTrackerNXT/doc" key="destdir"/>
-				<item value="/home/lego/Robolabra/Robotti/TuioTrackerNXT/javadoc.xml" key="antpath"/>
 				<item value="" key="href"/>
+				<item value="/home/lego/Robolabra/Robotti/TuioTrackerNXT/javadoc.xml" key="antpath"/>
 			</section>
 			<section name="pcsamples">
 				<item value="/home/lego/Robolabra/Robotti/pcsamples/doc" key="destdir"/>
-				<item value="/home/lego/Robolabra/Robotti/pcsamples/javadoc.xml" key="antpath"/>
 				<item value="" key="href"/>
+				<item value="/home/lego/Robolabra/Robotti/pcsamples/javadoc.xml" key="antpath"/>
 			</section>
 			<section name="startup">
 				<item value="/home/lego/Robolabra/Robotti/startup/doc" key="destdir"/>
-				<item value="/home/lego/Robolabra/Robotti/startup/javadoc.xml" key="antpath"/>
 				<item value="" key="href"/>
+				<item value="/home/lego/Robolabra/Robotti/startup/javadoc.xml" key="antpath"/>
 			</section>
 			<section name="samples">
 				<item value="/home/lego/Robolabra/Robotti/samples/doc" key="destdir"/>
-				<item value="/home/lego/Robolabra/Robotti/samples/javadoc.xml" key="antpath"/>
 				<item value="" key="href"/>
+				<item value="/home/lego/Robolabra/Robotti/samples/javadoc.xml" key="antpath"/>
 			</section>
 			<section name="wiiusej">
 				<item value="/home/lego/Robolabra/Robotti/wiiusej/doc" key="destdir"/>
-				<item value="/home/lego/Robolabra/Robotti/wiiusej/javadoc.xml" key="antpath"/>
 				<item value="" key="href"/>
+				<item value="/home/lego/Robolabra/Robotti/wiiusej/javadoc.xml" key="antpath"/>
 			</section>
 			<section name="Robotti">
 				<item value="/home/lego/Robolabra/Robotti/Robotti/doc" key="destdir"/>
-				<item value="/home/lego/Robolabra/Robotti/Robotti/javadoc.xml" key="antpath"/>
 				<item value="" key="href"/>
+				<item value="/home/lego/Robolabra/Robotti/Robotti/javadoc.xml" key="antpath"/>
 			</section>
 			<section name="jtools">
 				<item value="/home/lego/Robolabra/Robotti/jtools/doc" key="destdir"/>
-				<item value="/home/lego/Robolabra/Robotti/jtools/javadoc.xml" key="antpath"/>
 				<item value="" key="href"/>
+				<item value="/home/lego/Robolabra/Robotti/jtools/javadoc.xml" key="antpath"/>
 			</section>
 			<section name="pccomms">
 				<item value="/home/lego/Robolabra/Robotti/pccomms/doc" key="destdir"/>
-				<item value="/home/lego/Robolabra/Robotti/pccomms/javadoc.xml" key="antpath"/>
 				<item value="" key="href"/>
+				<item value="/home/lego/Robolabra/Robotti/pccomms/javadoc.xml" key="antpath"/>
 			</section>
 			<section name="GenTrackNXT">
 				<item value="/home/lego/Robolabra/Robotti/GenTrackNXT/doc" key="destdir"/>
+				<item value="" key="href"/>
 				<item value="/home/lego/Robolabra/Robotti/GenTrackNXT/javadoc.xml" key="antpath"/>
-				<item value="" key="href"/>
-			</section>
-			<section name="GenTrackPC">
-				<item value="/home/lego/Robolabra/Robotti/GenTrackPC/doc" key="destdir"/>
-				<item value="/home/lego/Robolabra/Robotti/GenTrackPC/javadoc.xml" key="antpath"/>
-				<item value="" key="href"/>
-			</section>
-			<section name="TuioTrackerPC">
-				<item value="/home/lego/Robolabra/Robotti/TuioTrackerPC/doc" key="destdir"/>
-				<item value="/home/lego/Robolabra/Robotti/TuioTrackerPC/javadoc.xml" key="antpath"/>
-				<item value="" key="href"/>
 			</section>
 			<section name="org.lejos.example">
 				<item value="/home/lego/Robolabra/Robotti/org.lejos.example/doc" key="destdir"/>
-				<item value="/home/lego/Robolabra/Robotti/org.lejos.example/javadoc.xml" key="antpath"/>
 				<item value="" key="href"/>
+				<item value="/home/lego/Robolabra/Robotti/org.lejos.example/javadoc.xml" key="antpath"/>
+			</section>
+			<section name="TuioTrackerPC">
+				<item value="/home/lego/Robolabra/Robotti/TuioTrackerPC/doc" key="destdir"/>
+				<item value="" key="href"/>
+				<item value="/home/lego/Robolabra/Robotti/TuioTrackerPC/javadoc.xml" key="antpath"/>
+			</section>
+			<section name="GenTrackPC">
+				<item value="/home/lego/Robolabra/Robotti/GenTrackPC/doc" key="destdir"/>
+				<item value="" key="href"/>
+				<item value="/home/lego/Robolabra/Robotti/GenTrackPC/javadoc.xml" key="antpath"/>
 			</section>
 		</section>
 	</section>
 	<section name="JavadocWizardDialog">
 		<item value="702" key="DIALOG_WIDTH"/>
 		<item value="0" key="DIALOG_Y_ORIGIN"/>
-		<item value="682" key="DIALOG_HEIGHT"/>
 		<item value="610" key="DIALOG_X_ORIGIN"/>
+		<item value="682" key="DIALOG_HEIGHT"/>
 		<item value="1|Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 </section>
