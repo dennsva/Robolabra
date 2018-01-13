@@ -1,0 +1,5 @@
+package robotti;
+
+public interface Pelaaja {
+
+}

@@ -1,0 +1,40 @@
+package robotti;
+
+import lejos.nxt.*;
+
+/**
+ * Example leJOS Project with an ant build file
+ *
+ */
+
+public class Robotti {
+	
+	//alas = A forward
+	//vasemmalle = B forward
+	//taakse = C forward
+	
+	//lähtöpaikka NXT:n vieressa!
+	
+	public static void main(String[] args) {	
+		Piirturi piirturi = new Piirturi();
+		
+		//piirturi.vapaaPiirtaminen();
+		//piirturi.ympyraTesti();
+		//piirturi.asetaKorkeus();
+		//piirturi.vapaaPiirtaminen(false);
+		//piirturi.piirraViiva(100, 100, 500, 800);
+		//piirturi.piirraViiva(100, 200, 400, 300);
+		//piirturi.nollaaRobotti();
+		
+		piirturi.asetaKorkeus(false);
+		/*
+		Pelaaja pelaaja1 = new Ihmispelaaja(1);
+		Pelaaja pelaaja2 = new Ihmispelaaja(2);
+		
+		Ristinolla peli = new Ristinolla(pelaaja1, pelaaja2);
+		peli.aloita();
+		Button.ENTER.waitForPressAndRelease();
+		*/
+	}
+
+}

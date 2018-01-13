@@ -1,0 +1,31 @@
+package robotti;
+
+public class Ristinollapiirturi extends Piirturi {
+	
+	public Ristinollapiirturi(int rajaB, int rajaC, int vakionopeus) {
+		super(rajaB, rajaC, vakionopeus);
+	}
+	
+	public Ristinollapiirturi() {
+		super();
+	}
+	
+	public void piirraKentta(int x1, int y1, int x2, int y2) {
+		if (!super.ruudukossa(x1, y1)) return;
+		if (!super.ruudukossa(x2, y2)) return;
+		if (x1 > x2) {
+			int vanhax1 = x1;
+			x1 = x2;
+			x2 = vanhax1;
+		}
+		if (y1 > y2) {
+			int vanhay1 = y1;
+			y1 = y2;
+			y2 = vanhay1;
+		}
+		int ykeski = (y1 + y2) / 2;
+		super.piirraViiva(lahtoX, lahtoY, loppuX, loppuY);
+		
+	}
+	
+}

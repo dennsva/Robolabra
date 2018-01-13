@@ -1,0 +1,80 @@
+package robotti;
+
+public class Ristinollapiirturi extends Piirturi {
+
+	private Ristinolla peli;
+	private int[] x;
+	private int[] y;
+	
+	/*
+	 * y3 ----------
+	 *    |  |  |  |
+	 * y2 ----------
+	 *    |  |  |  |
+	 * y1 ----------
+	 *    |  |  |  |
+	 * y0 ----------
+	 *    x0 x1 x2 x3
+	 */
+	
+	
+	public Ristinollapiirturi() {
+		super();
+		peli = new Ristinolla();
+	}
+	
+	public void luoKentta(int x1, int y1, int x2, int y2) {
+		if (!ruudukossa(x1, y1)) return;
+		if (!ruudukossa(x2, y2)) return;
+		
+		x[0] = x1;
+		x[1] = (2 * x1 + x2) / 3;
+		x[2] = (x1 + 2 * x2) / 3;
+		x[3] = x2;
+		
+		y[0] = y1;
+		y[1] = (2 * y1 + y2) / 3;
+		y[2] = (y1 + 2 * y2) / 3;
+		y[3] = y2;
+	}
+	
+	public void piirraKentta() {
+		piirraViiva(x[0], y[2], x[3], y[2]);
+		piirraViiva(x[0], y[1], x[3], y[1]);
+		piirraViiva(x[1], y[0], x[1], y[3]);
+		piirraViiva(x[2], y[0], x[2], y[3]);
+	}
+	
+	public void piirraMerkki(int indeksi, int merkki) {
+		if (indeksi == 0) piirraMerkki(merkki, x[0], y[2], x[1], y[3]);
+		if (indeksi == 1) piirraMerkki(merkki, x[1], y[2], x[2], y[3]);
+		if (indeksi == 2) piirraMerkki(merkki, x[2], y[2], x[3], y[3]);
+		if (indeksi == 3) piirraMerkki(merkki, x[0], y[1], x[1], y[2]);
+		if (indeksi == 4) piirraMerkki(merkki, x[1], y[1], x[2], y[2]);
+		if (indeksi == 5) piirraMerkki(merkki, x[2], y[1], x[3], y[2]);
+		if (indeksi == 6) piirraMerkki(merkki, x[0], y[0], x[1], y[1]);
+		if (indeksi == 7) piirraMerkki(merkki, x[1], y[0], x[2], y[1]);
+		if (indeksi == 8) piirraMerkki(merkki, x[2], y[0], x[3], y[1]);
+	}
+	
+	public void piirraMerkki(int merkki, int x1, int y1, int x2, int y2) {
+		if (merkki == 1) piirraRisti(x1, y1, x2, y2);
+		if (merkki == 2) piirraNolla(x1, y1, x2, y2);
+	}
+	
+	public void piirraRisti(int x1, int y1, int x2, int y2) {
+		piirraViiva(x1, y1, x2, y2);
+		piirraViiva(x1, y2, x2, y1);
+	}
+	
+	public void piirraNolla(int x1, int y1, int x2, int y2) {
+		int xkeski = (x1 + x2) / 2;
+		int ykeski = (y1 + y2) / 2;
+		
+		piirraViiva(x1, ykeski, xkeski, y2);
+		piirraViiva(xkeski, y2, x2, ykeski);
+		piirraViiva(x2, ykeski, xkeski, y1);
+		piirraViiva(xkeski, y1, x1, ykeski);
+	}
+	
+}

@@ -1,0 +1,25 @@
+package robotti;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Satunnaispelaaja implements Pelaaja {
+
+	int pelaaja;
+	
+	public Ristinollapelaaja() {
+		
+	}
+	
+	public void pelaa(ArrayList<Integer> ruudukko) {
+		Random random = new Random();
+		while (true) {
+			int luku = random.nextInt(9);
+			if (ruudukko.get(luku) == 0) {
+				ruudukko.set(luku, pelaaja);
+				break;
+			}
+		}
+	}
+	
+}
