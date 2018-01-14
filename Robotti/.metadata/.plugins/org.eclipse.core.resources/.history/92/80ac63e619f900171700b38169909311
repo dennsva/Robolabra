@@ -33,7 +33,6 @@ public class Robotti {
 		ristinolla();
 	}
 	
-	/**Vapaa piirto-ohjelma!*/
 	public static void piirra() {
 		Piirturi piirturi = new Piirturi();
 		piirturi.asetaKorkeus();
@@ -42,8 +41,8 @@ public class Robotti {
 	}
 	
 	public static void ristinolla() {
-		Pelaaja pelaaja1 = new Satunnaispelaaja(1);
-		Pelaaja pelaaja2 = new Satunnaispelaaja(2);
+		Pelaaja pelaaja1 = new Ihmispelaaja(1);
+		Pelaaja pelaaja2 = new Ihmispelaaja(2);
 		
 		Ristinolla peli = new Ristinolla(pelaaja1, pelaaja2);
 		peli.aloita();

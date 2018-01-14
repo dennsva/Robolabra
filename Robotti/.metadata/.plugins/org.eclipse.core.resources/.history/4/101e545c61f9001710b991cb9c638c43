@@ -34,7 +34,6 @@ public class Ristinolla {
 		return ruudukko;
 	}
 	
-	/**Aloittaa pelin.*/
 	public void aloita() {
 		piirturi.luoKentta(0, 0, 300, 300);
 		piirturi.piirraKentta();
@@ -51,14 +50,12 @@ public class Ristinolla {
 		piirturi.nollaaRobotti();
 	}
 	
-	/**Palauttaa merkin, jota annettu pelaaja kayttaa.*/
 	public String merkki(int pelaaja) {
 		if (pelaaja == 1) return "X";
 		if (pelaaja == 2) return "O";
 		return "-";
 	}
 	
-	/**Muodostaa ruudukosta merkkijonon.*/
 	public String ruudukkoString() {
 		String string = "";
 		for (int rivi = 0; rivi < 3; rivi++) {
@@ -70,7 +67,6 @@ public class Ristinolla {
 		return string;
 	}
 	
-	/**Laskee annetun pelaajan merkkien maaran ruudukossa.*/
 	public int pelattuja(int pelaaja) {
 		int pelattuja = 0;
 		for (int i = 0; i < ruudukko.size(); i++) {
@@ -79,19 +75,16 @@ public class Ristinolla {
 		return pelattuja;
 	}
 	
-	/**Palauttaa sen pelaajan numeron, joka on vuorossa.*/
 	public int vuorossa() {
 		if (pelattuja(1) > pelattuja(2)) return 2;
 		return 1;
 	}
 	
-	/**Palauttaa Pelaajan, joka on vuorossa*/
 	public Pelaaja vuorossaPelaaja() {
 		if (vuorossa() == 2) return pelaaja2;
 		return pelaaja1;
 	}
 	
-	/**Kysyy vuorossa olevalta siirtoa ja pelaa sen.*/
 	public boolean pelaa() {
 		int indeksi = vuorossaPelaaja().pelaa(ruudukko);
 		if (indeksi < 0 || indeksi >= 9) return false;
@@ -103,7 +96,6 @@ public class Ristinolla {
         return true;
 	}
 	
-	/**Tarkistaa, onko ruudukon annetuissa indekseissa kolme saman pelaajan merkkia.*/
 	public int voittorivi(int indeksi1, int indeksi2, int indeksi3) {
 		if (ruudukko.get(indeksi1) == 1
 				&& ruudukko.get(indeksi2) == 1
@@ -120,17 +112,15 @@ public class Ristinolla {
 		return 0;
 	}
 	
-	/**Palauttaa pelaajan, joka voitti pelin.*/
 	public int voittaja() {
 		return voittaja(false);
 	}
 	
-	/**Piirtaa viivan voittorivien yli. Palauttaa voittajan.*/
 	public int viivaaVoittaja() {
 		return voittaja(true);
 	}
 	
-	private int voittaja(boolean viivaa) {
+	public int voittaja(boolean viivaa) {
 		//rivit
 		if (voittorivi(0, 1, 2) > 0) {
 			if (viivaa) piirturi.viivaaRivi(0);
@@ -173,7 +163,6 @@ public class Ristinolla {
 		return 0;
 	}
 	
-	/**Palauttaa true jos ja vain jos peli on edelleen kaynnissa.*/
 	public boolean peliKaynnissa() {
 		if (voittaja() == 0 && pelattuja(1) + pelattuja(2) < 9) return true;
 		return false;
