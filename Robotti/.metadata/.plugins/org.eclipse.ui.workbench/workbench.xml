@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="27" version="2.0">
+<workbench progressCount="12" version="2.0">
 <workbenchAdvisor/>
 <window height="768" maximized="true" width="958" x="0" y="24">
 <fastViewData fastViewLocation="1024"/>
@@ -42,17 +42,18 @@
 <part id="10"/>
 <part id="11"/>
 <part id="12"/>
+<part id="13"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Robotti.java" partName="Robotti.java" path="/home/lego/Robolabra/Robotti/Robotti/src/robotti/Robotti.java" title="Robotti.java" tooltip="Robotti/src/robotti/Robotti.java" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Robotti.java" partName="Robotti.java" path="/home/lego/Robolabra/Robotti/Robotti/src/robotti/Robotti.java" title="Robotti.java" tooltip="Robotti/src/robotti/Robotti.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Robotti/src/robotti/Robotti.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="720" selectionTopPixel="136"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="974" selectionTopPixel="340"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Ristinolla.java" partName="Ristinolla.java" path="/home/lego/Robolabra/Robotti/Robotti/src/robotti/Ristinolla.java" title="Ristinolla.java" tooltip="Robotti/src/robotti/Ristinolla.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Robotti/src/robotti/Ristinolla.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="777" selectionTopPixel="371"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="930" selectionTopPixel="512"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RistinollanTestaus.java" partName="RistinollanTestaus.java" path="/home/lego/Robolabra/Robotti/Robotti/src/testaus/RistinollanTestaus.java" title="RistinollanTestaus.java" tooltip="Robotti/src/testaus/RistinollanTestaus.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Robotti/src/testaus/RistinollanTestaus.java"/>
@@ -80,11 +81,11 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Piirturi.java" partName="Piirturi.java" path="/home/lego/Robolabra/Robotti/Robotti/src/robotti/Piirturi.java" title="Piirturi.java" tooltip="Robotti/src/robotti/Piirturi.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Robotti/src/robotti/Piirturi.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="274" selectionOffset="1737" selectionTopPixel="804"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1218" selectionTopPixel="452"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Ristinollapiirturi.java" partName="Ristinollapiirturi.java" path="/home/lego/Robolabra/Robotti/Robotti/src/robotti/Ristinollapiirturi.java" title="Ristinollapiirturi.java" tooltip="Robotti/src/robotti/Ristinollapiirturi.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Robotti/src/robotti/Ristinollapiirturi.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="356" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3065" selectionTopPixel="743"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Pelaaja.java" partName="Pelaaja.java" path="/home/lego/Robolabra/Robotti/Robotti/src/robotti/Pelaaja.java" title="Pelaaja.java" tooltip="Robotti/src/robotti/Pelaaja.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Robotti/src/robotti/Pelaaja.java"/>
@@ -94,9 +95,13 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Robotti/src/robotti/Satunnaispelaaja.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="230" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Ihmispelaaja.java" partName="Ihmispelaaja.java" path="/home/lego/Robolabra/Robotti/Robotti/src/robotti/Ihmispelaaja.java" title="Ihmispelaaja.java" tooltip="Robotti/src/robotti/Ihmispelaaja.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Ihmispelaaja.java" partName="Ihmispelaaja.java" path="/home/lego/Robolabra/Robotti/Robotti/src/robotti/Ihmispelaaja.java" title="Ihmispelaaja.java" tooltip="Robotti/src/robotti/Ihmispelaaja.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Robotti/src/robotti/Ihmispelaaja.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1161" selectionTopPixel="559"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1073" selectionTopPixel="646"/>
+</editor>
+<editor id="org.eclipse.ant.ui.internal.editor.AntEditor" name="build.xml" partName="build.xml" path="/home/lego/Robolabra/Robotti/Robotti/build.xml" title="build.xml" tooltip="Robotti/build.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Robotti/build.xml"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1448" selectionTopPixel="493"/>
 </editor>
 </editors>
 <views>
@@ -119,8 +124,7 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Warnings"/>
+<expanded>&#x0A;<category IMemento.internal.id="Warnings"/>
 <category IMemento.internal.id="Errors"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="0" org.eclipse.ui.ide.markerType="0" org.eclipse.ui.ide.pathField="0" org.eclipse.ui.ide.resourceField="0" org.eclipse.ui.ide.severityAndDescriptionField="0"/>
@@ -132,21 +136,6 @@
 </viewState>
 </view>
 <view id="org.eclipse.ui.console.ConsoleView" partName="Console">
-<viewState/>
-</view>
-<view id="org.eclipse.mylyn.tasks.ui.views.tasks" partName="Task List">
-<viewState linkWithEditor="true" presentation="org.eclipse.mylyn.tasks.ui.categorized">
-<sorter groupBy="CATEGORY_QUERY">
-<sorter>
-<sort0 sortDirection="1" sortKey="PRIORITY"/>
-<sort1 sortDirection="1" sortKey="DATE_CREATED"/>
-<sort2 sortDirection="1" sortKey="NONE"/>
-<sort3 sortDirection="1" sortKey="NONE"/>
-</sorter>
-</sorter>
-</viewState>
-</view>
-<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
 <viewState/>
 </view>
 <view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
@@ -209,23 +198,20 @@
 <view id="org.eclipse.jdt.ui.JavadocView"/>
 <view id="org.eclipse.jdt.ui.SourceView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
-<view id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
 <view id="org.eclipse.ui.views.ResourceNavigator"/>
-<view id="org.eclipse.ui.views.ContentOutline"/>
 <fastViewBars/>
 <layout>
 <mainWindow>
 <info folder="true" part="left">
 <folder activePageID="org.eclipse.ui.views.ResourceNavigator" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ResourceNavigator" label="Navigator"/>
-<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.junit.ResultView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
-<part id="1"/>
 </presentation>
 </folder>
 </info>
@@ -256,11 +242,9 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@9c15d2" ratio="0.848088" ratioLeft="1619" ratioRight="290" relationship="2" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.mylyn.tasks.ui.views.tasks" appearance="2" expanded="2">
-<page content="org.eclipse.mylyn.tasks.ui.views.tasks" label="Task List"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.mylyn.tasks.ui.views.tasks" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info folder="true" part="right" ratio="0.5" ratioLeft="234" ratioRight="234" relationship="4" relative="org.eclipse.ui.internal.ViewStack@9c15d2">
@@ -277,162 +261,162 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Robotti/src/robotti/Ristinolla.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Robotti/src/testaus/RistinollanTestaus.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Robotti/src/robotti/Robotti.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Robotti/src/robotti/Ihmispelaaja.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Robotti/src/robotti/Ristinolla.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Robotti/src/robotti/Piirturi.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Robotti/src/robotti/Ristinollapiirturi.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ant.ui.internal.editor.AntEditor" path="/Robotti/build.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Robotti/src/robotti/Robotti.java"/>
 </editors>
-<item historyLabel="Robotti.java" index="2">
-<position info="not_deleted" x="560" y="0"/>
+<item historyLabel="Piirturi.java" index="2">
+<position info="not_deleted" x="6789" y="0"/>
 </item>
-<item historyLabel="Robotti.java" index="2">
-<position info="not_deleted" x="701" y="0"/>
-</item>
-<item historyLabel="Robotti.java" index="2">
-<position info="not_deleted" x="703" y="0"/>
-</item>
-<item historyLabel="Ristinolla.java" index="0">
-<position info="not_deleted" x="835" y="0"/>
-</item>
-<item historyLabel="Robotti.java" index="2">
-<position info="not_deleted" x="767" y="0"/>
-</item>
-<item historyLabel="Ristinolla.java" index="0">
-<position info="not_deleted" x="835" y="0"/>
-</item>
-<item historyLabel="Ristinolla.java" index="0">
-<position info="not_deleted" x="674" y="0"/>
-</item>
-<item historyLabel="Ristinolla.java" index="0">
-<position info="not_deleted" x="832" y="0"/>
-</item>
-<item historyLabel="Ristinolla.java" index="0">
-<position info="not_deleted" x="696" y="0"/>
-</item>
-<item historyLabel="Ristinolla.java" index="0">
-<position info="not_deleted" x="777" y="0"/>
-</item>
-<item historyLabel="Ristinolla.java" index="0">
-<position info="not_deleted" x="829" y="0"/>
-</item>
-<item historyLabel="Ristinolla.java" index="0">
-<position info="not_deleted" x="781" y="0"/>
-</item>
-<item historyLabel="Ihmispelaaja.java" index="3">
-<position info="not_deleted" x="702" y="0"/>
-</item>
-<item historyLabel="Robotti.java" index="2">
-<position info="not_deleted" x="767" y="0"/>
-</item>
-<item historyLabel="Ristinolla.java" index="0">
-<position info="not_deleted" x="957" y="0"/>
-</item>
-<item historyLabel="Robotti.java" index="2">
+<item historyLabel="Robotti.java" index="0">
 <position/>
 </item>
-<item historyLabel="Ristinolla.java" index="0">
-<position info="not_deleted" x="653" y="0"/>
+<item historyLabel="Ristinollapiirturi.java" index="3">
+<position info="not_deleted" x="541" y="0"/>
 </item>
-<item historyLabel="Robotti.java" index="2">
-<position info="not_deleted" x="314" y="0"/>
+<item historyLabel="Piirturi.java" index="2">
+<position info="not_deleted" x="7231" y="0"/>
 </item>
-<item historyLabel="Ristinollapiirturi.java" index="5">
-<position info="not_deleted" x="356" y="0"/>
+<item historyLabel="Robotti.java" index="0">
+<position/>
 </item>
-<item historyLabel="Robotti.java" index="2">
-<position info="not_deleted" x="314" y="0"/>
+<item historyLabel="Robotti.java" index="0">
+<position info="not_deleted" x="666" y="0"/>
 </item>
-<item historyLabel="Ihmispelaaja.java" index="3">
-<position info="not_deleted" x="702" y="0"/>
+<item historyLabel="Robotti.java" index="0">
+<position info="not_deleted" x="671" y="0"/>
 </item>
-<item historyLabel="Ristinolla.java" index="0">
-<position info="not_deleted" x="653" y="0"/>
+<item historyLabel="Robotti.java" index="0">
+<position/>
 </item>
-<item historyLabel="Piirturi.java" index="4">
-<position info="not_deleted" x="1737" y="274"/>
+<item historyLabel="Piirturi.java" index="2">
+<position info="not_deleted" x="1218" y="0"/>
 </item>
-<item historyLabel="Ihmispelaaja.java" index="3">
-<position info="not_deleted" x="702" y="0"/>
+<item historyLabel="Robotti.java" index="0">
+<position/>
 </item>
-<item historyLabel="Ihmispelaaja.java" index="3">
-<position info="not_deleted" x="892" y="0"/>
+<item historyLabel="Robotti.java" index="0">
+<position info="not_deleted" x="727" y="0"/>
 </item>
-<item historyLabel="Robotti.java" index="2">
-<position info="not_deleted" x="312" y="0"/>
+<item historyLabel="Robotti.java" index="0">
+<position info="not_deleted" x="766" y="0"/>
 </item>
-<item historyLabel="Ihmispelaaja.java" index="3">
-<position info="not_deleted" x="1229" y="0"/>
+<item historyLabel="Robotti.java" index="0">
+<position info="not_deleted" x="1062" y="0"/>
 </item>
-<item historyLabel="Robotti.java" index="2">
-<position info="not_deleted" x="312" y="0"/>
+<item historyLabel="Ristinolla.java" index="1">
+<position info="not_deleted" x="734" y="0"/>
 </item>
-<item historyLabel="Ihmispelaaja.java" index="3">
-<position info="not_deleted" x="706" y="55"/>
+<item historyLabel="Ristinolla.java" index="1">
+<position info="not_deleted" x="3595" y="0"/>
 </item>
-<item historyLabel="Robotti.java" index="2">
-<position info="not_deleted" x="720" y="0"/>
+<item historyLabel="Ristinolla.java" index="1">
+<position info="not_deleted" x="3614" y="0"/>
 </item>
-<item historyLabel="Ihmispelaaja.java" index="3">
-<position info="not_deleted" x="706" y="55"/>
+<item historyLabel="Ristinolla.java" index="1">
+<position info="not_deleted" x="3685" y="0"/>
 </item>
-<item historyLabel="Ihmispelaaja.java" index="3">
-<position info="not_deleted" x="1304" y="0"/>
+<item historyLabel="Ristinolla.java" index="1">
+<position info="not_deleted" x="2707" y="0"/>
 </item>
-<item historyLabel="Robotti.java" index="2">
-<position info="not_deleted" x="720" y="0"/>
+<item historyLabel="Ristinolla.java" index="1">
+<position info="not_deleted" x="2707" y="0"/>
 </item>
-<item historyLabel="Ihmispelaaja.java" index="3">
-<position info="not_deleted" x="890" y="0"/>
+<item historyLabel="Ristinollapiirturi.java" index="3">
+<position info="not_deleted" x="541" y="0"/>
 </item>
-<item historyLabel="RistinollanTestaus.java" index="1">
-<position info="not_deleted" x="608" y="0"/>
+<item historyLabel="Ristinollapiirturi.java" index="3">
+<position info="not_deleted" x="3068" y="0"/>
 </item>
-<item historyLabel="Ristinolla.java" index="0">
-<position info="not_deleted" x="653" y="0"/>
+<item historyLabel="Ristinollapiirturi.java" index="3">
+<position info="not_deleted" x="2701" y="0"/>
 </item>
-<item historyLabel="Ihmispelaaja.java" index="3">
-<position info="not_deleted" x="890" y="0"/>
+<item historyLabel="Ristinollapiirturi.java" index="3">
+<position info="not_deleted" x="2910" y="0"/>
 </item>
-<item historyLabel="Ihmispelaaja.java" index="3">
-<position info="not_deleted" x="1228" y="0"/>
+<item historyLabel="Ristinolla.java" index="1">
+<position info="not_deleted" x="2707" y="0"/>
 </item>
-<item historyLabel="Robotti.java" index="2">
-<position info="not_deleted" x="720" y="0"/>
+<item historyLabel="Ristinolla.java" index="1">
+<position info="not_deleted" x="792" y="0"/>
 </item>
-<item historyLabel="Robotti.java" index="2">
-<position info="not_deleted" x="783" y="0"/>
+<item historyLabel="Ristinolla.java" index="1">
+<position info="not_deleted" x="964" y="0"/>
 </item>
-<item historyLabel="Ristinolla.java" index="0">
-<position info="not_deleted" x="1799" y="0"/>
+<item historyLabel="Robotti.java" index="0">
+<position info="not_deleted" x="1062" y="0"/>
 </item>
-<item historyLabel="Robotti.java" index="2">
-<position info="not_deleted" x="745" y="0"/>
+<item historyLabel="Ristinolla.java" index="1">
+<position info="not_deleted" x="812" y="0"/>
 </item>
-<item historyLabel="Ristinolla.java" index="0">
-<position info="not_deleted" x="1799" y="0"/>
+<item historyLabel="Robotti.java" index="0">
+<position info="not_deleted" x="678" y="0"/>
 </item>
-<item historyLabel="Ihmispelaaja.java" index="3">
-<position info="not_deleted" x="1228" y="0"/>
+<item historyLabel="Ristinolla.java" index="1">
+<position info="not_deleted" x="812" y="0"/>
 </item>
-<item historyLabel="Ihmispelaaja.java" index="3">
-<position info="not_deleted" x="946" y="0"/>
+<item historyLabel="Ristinollapiirturi.java" index="3">
+<position info="not_deleted" x="949" y="0"/>
 </item>
-<item historyLabel="Ihmispelaaja.java" index="3">
-<position info="not_deleted" x="492" y="0"/>
+<item historyLabel="Robotti.java" index="0">
+<position info="not_deleted" x="681" y="0"/>
 </item>
-<item historyLabel="Ristinolla.java" index="0">
-<position info="not_deleted" x="939" y="0"/>
+<item historyLabel="Ristinolla.java" index="1">
+<position info="not_deleted" x="812" y="0"/>
 </item>
-<item historyLabel="Robotti.java" index="2">
-<position info="not_deleted" x="720" y="0"/>
+<item historyLabel="Robotti.java" index="0">
+<position info="not_deleted" x="1062" y="0"/>
 </item>
-<item historyLabel="Ristinolla.java" index="0">
-<position info="not_deleted" x="777" y="0"/>
+<item historyLabel="Ristinolla.java" index="1">
+<position info="not_deleted" x="1009" y="0"/>
 </item>
-<item active="true" historyLabel="Ihmispelaaja.java" index="3">
-<position info="not_deleted" x="492" y="0"/>
+<item historyLabel="Robotti.java" index="0">
+<position info="not_deleted" x="1062" y="0"/>
+</item>
+<item historyLabel="Ristinolla.java" index="1">
+<position info="not_deleted" x="1037" y="0"/>
+</item>
+<item historyLabel="build.xml" index="4">
+<position info="not_deleted" x="1448" y="0"/>
+</item>
+<item historyLabel="Ristinollapiirturi.java" index="3">
+<position info="not_deleted" x="949" y="0"/>
+</item>
+<item historyLabel="Ristinollapiirturi.java" index="3">
+<position info="not_deleted" x="1195" y="0"/>
+</item>
+<item historyLabel="Ristinollapiirturi.java" index="3">
+<position info="not_deleted" x="3065" y="0"/>
+</item>
+<item historyLabel="Robotti.java" index="0">
+<position info="not_deleted" x="1065" y="0"/>
+</item>
+<item historyLabel="Ristinolla.java" index="1">
+<position info="not_deleted" x="1037" y="0"/>
+</item>
+<item historyLabel="Ristinolla.java" index="1">
+<position info="not_deleted" x="2491" y="0"/>
+</item>
+<item historyLabel="Ristinolla.java" index="1">
+<position info="not_deleted" x="2520" y="0"/>
+</item>
+<item historyLabel="Ristinolla.java" index="1">
+<position info="not_deleted" x="857" y="0"/>
+</item>
+<item historyLabel="Ristinolla.java" index="1">
+<position info="not_deleted" x="2584" y="0"/>
+</item>
+<item historyLabel="Robotti.java" index="0">
+<position info="not_deleted" x="1065" y="0"/>
+</item>
+<item historyLabel="Ristinolla.java" index="1">
+<position info="not_deleted" x="2584" y="0"/>
+</item>
+<item active="true" historyLabel="Robotti.java" index="5">
+<position info="not_deleted" x="1065" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -451,6 +435,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ant.ui.internal.editor.AntEditor" name="build.xml" tooltip="Robotti/build.xml">
+<persistable path="/Robotti/build.xml"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Ihmispelaaja.java" tooltip="Robotti/src/robotti/Ihmispelaaja.java">
 <persistable path="/Robotti/src/robotti/Ihmispelaaja.java"/>
 </file>
@@ -492,9 +479,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RistinollanTestaus.java" tooltip="Robotti/src/testaus/RistinollanTestaus.java">
 <persistable path="/Robotti/src/testaus/RistinollanTestaus.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Ristinolla.java" tooltip="Robotti/src/robotti/Ristinolla.java">
-<persistable path="/Robotti/src/robotti/Ristinolla.java"/>
 </file>
 </mruList>
 </workbench>
