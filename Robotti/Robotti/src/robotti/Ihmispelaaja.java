@@ -45,6 +45,7 @@ public class Ihmispelaaja implements Pelaaja {
 		});
 	}
 	
+	/*Kysyy kayttajalta siirtoa ja pelaa sen.**/
 	public int pelaa(ArrayList<Integer> ruudukko) {
 		indeksi = 0;
 		

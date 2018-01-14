@@ -26,6 +26,7 @@ public class Ristinollapiirturi extends Piirturi {
 		this.y = new int[7];
 	}
 	
+	/**Tallentaa olioon tiedot kentasta.*/
 	public void luoKentta(int x1, int y1, int x2, int y2) {
 		if (!ruudukossa(x1, y1)) return;
 		if (!ruudukossa(x2, y2)) return;
@@ -48,6 +49,7 @@ public class Ristinollapiirturi extends Piirturi {
 		y[6] = y2;
 	}
 	
+	/**Piirtaa kentan. Kayta ensin metodia luoKentta()!*/
 	public void piirraKentta() {
 		asetaKorkeus();
 		piirraViiva(x[0], y[4], x[6], y[4]);
@@ -57,6 +59,7 @@ public class Ristinollapiirturi extends Piirturi {
 		nostaKyna();
 	}
 	
+	/**Piirtaa annetun merkin annettuun ruudukon indeksiin.*/
 	public void piirraMerkki(int indeksi, int merkki) {
 		if (indeksi == 0) piirraMerkki(merkki, x[0], y[4], x[2], y[6]);
 		if (indeksi == 1) piirraMerkki(merkki, x[2], y[4], x[4], y[6]);
@@ -69,17 +72,20 @@ public class Ristinollapiirturi extends Piirturi {
 		if (indeksi == 8) piirraMerkki(merkki, x[4], y[0], x[6], y[2]);
 	}
 	
+	/**Piirtaa annetut merkin ruutuun, jonka muodostaa annetut koordinaatit.*/
 	public void piirraMerkki(int merkki, int x1, int y1, int x2, int y2) {
 		if (merkki == 1) piirraRisti(x1, y1, x2, y2);
 		if (merkki == 2) piirraNolla(x1, y1, x2, y2);
 	}
 	
+	/**Piirtaa ristin ruutuun, jonka muodostaa annetut koordinaatit.*/
 	public void piirraRisti(int x1, int y1, int x2, int y2) {
 		piirraViiva(x1, y1, x2, y2);
 		piirraViiva(x1, y2, x2, y1);
 		nostaKyna();
 	}
 	
+	/**Piirtaa nollan ruutuun, jonka muodostaa annetut koordinaatit.*/
 	public void piirraNolla(int x1, int y1, int x2, int y2) {
 		int xkeski = (x1 + x2) / 2;
 		int ykeski = (y1 + y2) / 2;
@@ -91,6 +97,15 @@ public class Ristinollapiirturi extends Piirturi {
 		nostaKyna();
 	}
 	
+	/**Piirtaa viivan annetun rivin yli. Indeksit seuraavasti:
+	 * 0: rivi 1 ylhaalta
+	 * 1: rivi 2
+	 * 2: rivi 3
+	 * 3: sarake 0 vasemmalta
+	 * 4: sarake 1
+	 * 5: sarake 2
+	 * 6: diagonaali \
+	 * 7: diagonaali /*/
 	public void viivaaRivi(int rivi) {
 		//rivit 0, 1, 2 (ylhäältä alas)
 		if (rivi == 0) piirraViiva(x[0], y[5], x[6], y[5]);

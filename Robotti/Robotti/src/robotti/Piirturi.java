@@ -196,12 +196,13 @@ public class Piirturi {
 		Motor.C.setSpeed(nopeusY);
 	}
 	
+	/**Antaa kayttajalle mahdollisuuden hienosaataa kynan korkeus.*/
 	public void asetaKorkeus() {
 		asetaKorkeus(true);
 	}
 	
 	/**Antaa kayttajalle mahdollisuuden hienosaataa kynan korkeus.*/
-	public void asetaKorkeus(boolean nostetaan) {
+	private void asetaKorkeus(boolean nostetaan) {
 		
 		moottoriA = true;
 		
@@ -263,7 +264,7 @@ public class Piirturi {
 		liikuta(loppuX, loppuY);
 	}
 	
-	/**Piirtaa numeron ruutuun, jonka maaraa koordinaatit (x1, y1) ja (x2, y2).*/
+	/**Piirtaa annetun numeron ruutuun, jonka maaraa koordinaatit (x1, y1) ja (x2, y2).*/
 	public void piirraNumero(int numero, int x1, int y1, int x2, int y2) {
 		if (!ruudukossa(x1, y1)) return;
 		if (!ruudukossa(x2, y2)) return;
@@ -326,21 +327,6 @@ public class Piirturi {
 			piirraViiva(x1, y2, x2, y2);
 			piirraViiva(x2, y2, x2, y1);
 			piirraViiva(x2, y1, x1, y1);
-		}
-	}
-	
-	public void ympyraTesti() {
-		int t = 0;
-		Delay delay = new Delay();
-		Motor.B.setAcceleration(50);
-		Motor.C.setAcceleration(50);
-		Motor.B.forward();
-		Motor.C.forward();
-		while (t < 10000) {
-			Motor.B.setSpeed((int) (-90 * Math.sin(6 * t / 10000)));
-			Motor.C.setSpeed((int) (90 * Math.cos(6 * t / 10000)));
-			delay.msDelay(10);
-			t += 10;
 		}
 	}
 	

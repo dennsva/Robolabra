@@ -11,6 +11,7 @@ public class Satunnaispelaaja implements Pelaaja {
 		this.pelaaja = pelaaja;
 	}
 	
+	/**Tekee satunnaisen siirron.*/
 	public int pelaa(ArrayList<Integer> ruudukko) {
 		Random random = new Random();
 		while (true) {

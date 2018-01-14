@@ -33,6 +33,7 @@ public class Robotti {
 		ristinolla();
 	}
 	
+	/**Vapaa piirto-ohjelma!*/
 	public static void piirra() {
 		Piirturi piirturi = new Piirturi();
 		piirturi.asetaKorkeus();
