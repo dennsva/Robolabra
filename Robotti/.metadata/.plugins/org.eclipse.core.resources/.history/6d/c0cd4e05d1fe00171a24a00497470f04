@@ -57,11 +57,11 @@ public class Ristinolla {
 			pelaa();
 		}
 		if (voittaja() > 0) {
+			if (piirretaan) viivaaVoittaja();
 			Sound.playNote(Sound.PIANO, 660, 200);
 			Sound.playNote(Sound.PIANO, 660, 200);
 			Sound.playNote(Sound.PIANO, 660, 200);
 			Sound.playNote(Sound.PIANO, 880, 1200);
-			if (piirretaan) viivaaVoittaja();
 			System.out.println("Voittaja on " + merkki(voittaja()));
 		} else {
 			System.out.println("Tasapeli!");
