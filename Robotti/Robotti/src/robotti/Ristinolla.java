@@ -42,6 +42,7 @@ public class Ristinolla {
 		this.piirretaan = piirretaan;
 	}
 	
+	/**Palauttaa pelin ruudukon ArrayList-oliona.*/
 	public ArrayList<Integer> getRuudukko() {
 		return ruudukko;
 	}

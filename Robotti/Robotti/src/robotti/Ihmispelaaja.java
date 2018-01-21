@@ -55,7 +55,7 @@ public class Ihmispelaaja implements Pelaaja {
 		this.peli = peli;
 	}
 	
-	/*Kysyy kayttajalta siirtoa ja pelaa sen.**/
+	/**Kysyy kayttajalta siirtoa ja pelaa sen.*/
 	public int pelaa() {
 		indeksi = 0;
 		indeksi = peli.ensimmainenTyhjaEtuperin(indeksi);

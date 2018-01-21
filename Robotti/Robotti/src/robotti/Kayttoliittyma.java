@@ -44,6 +44,7 @@ public class Kayttoliittyma {
 		});
 	}
 	
+	/**Kaynnistaa kayttoliittyman.*/
 	public void kaynnista() {
 		indeksi = 0;
 		tulostaOhje(indeksi);
@@ -66,6 +67,7 @@ public class Kayttoliittyma {
 		}
 	}
 	
+	/**Tulostaa annettuun indeksiin liittyvän toiminnon ohjeet.*/
 	public void tulostaOhje(int indeksi) {
 		LCD.clear();
 		System.out.println("Valitse toiminto");
