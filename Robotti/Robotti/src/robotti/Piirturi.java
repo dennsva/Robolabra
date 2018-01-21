@@ -23,6 +23,8 @@ public class Piirturi {
 	private final int rajaC;
 	private final int vakionopeus;
 	
+	private boolean kynaYlhaalla;
+	
 	public Piirturi(int rajaB, int rajaC, int vakionopeus) {
 		this.rajaB = rajaB;
 		this.rajaC = rajaC;
@@ -40,14 +42,37 @@ public class Piirturi {
 		vapaaPiirtaminen(true);
 	}
 	
-	public void vapaaPiirtaminen(final boolean rajoitettu) {
+	private void vapaaPiirtaminen(final boolean rajoitettu) {
 		//metodin parametrit ovat testausta varten!
 		
 		asetaNopeudet(vakionopeus);
 		
-		System.out.println("Nyt voit piirtaa");
-		System.out.println("vapaasti! Esc");
-		System.out.println("lopettaa.");
+		if (rajoitettu) {
+			System.out.println("Nyt voit piirtaa");
+			System.out.println("vapaasti! Enter");
+			System.out.println("nostaa tai");
+			System.out.println("laskee kynan.");
+			System.out.println("Esc lopettaa.");
+			System.out.println(" ");
+		} else {
+			System.out.println("Aseta piirturi");
+			System.out.println("kulmaan, jossa");
+			System.out.println("NXT on ja paina");
+			System.out.println("esc.");
+			System.out.println(" ");
+			System.out.println(" ");
+		}
+		
+		//kynän nostaminen ja laskeminen
+		Button.ENTER.addButtonListener(new ButtonListener() {
+			public void buttonPressed(Button b) {
+				if (rajoitettu) nostaTaiLaskeKyna();
+			}
+			
+			public void buttonReleased(Button b) {
+				
+			}
+		});
 		
 		//kynän siirtäminen vasemmalle
 		Button.LEFT.addButtonListener(new ButtonListener() {
@@ -145,12 +170,23 @@ public class Piirturi {
 	
 	/**Laskee kynan paperiin.*/
 	public void laskeKyna() {
+		kynaYlhaalla = false;
 		Motor.A.rotateTo(rajaA);
 	}
 	
 	/**Nostaa kynan paperista.*/
 	public void nostaKyna() {
+		kynaYlhaalla = true;
 		Motor.A.rotateTo(0);
+	}
+	
+	/**Nostaa tai laskee kynan paperiin.*/
+	public void nostaTaiLaskeKyna() {
+		if (kynaYlhaalla) {
+			laskeKyna();
+		} else {
+			nostaKyna();
+		}
 	}
 	
 	/**Liikuttaa piirturia suoraan parametrien maaraamaan pisteeseen. X valilla [0, 850] ja Y valilla [0, 500].*/
@@ -164,8 +200,8 @@ public class Piirturi {
 		if (suurin == 0) return;
 		
 		//moottoreiden pitää liikkua eri pituiset osuudet yhtä nopeasti! maksiminopeus vakionopeus.
-		System.out.println((vakionopeus * leveys) / suurin);
-		System.out.println((vakionopeus * korkeus) / suurin);
+		//System.out.println((vakionopeus * leveys) / suurin);
+		//System.out.println((vakionopeus * korkeus) / suurin);
 		asetaNopeudet((vakionopeus * leveys) / suurin, (vakionopeus * korkeus) / suurin);
 		
 		//liikutaan
@@ -201,16 +237,28 @@ public class Piirturi {
 		asetaKorkeus(true);
 	}
 	
-	/**Antaa kayttajalle mahdollisuuden hienosaataa kynan korkeus.*/
 	private void asetaKorkeus(boolean nostetaan) {
 		
 		moottoriA = true;
 		
 		//riville mahtuu 16 merkkiä
-		System.out.println("Aseta kynan");
-		System.out.println("korkeus ja paina");
-		System.out.println("enter");
-		System.out.println("<- alas  ylos ->");
+		LCD.clear();
+		if (nostetaan) {
+			System.out.println("Aseta kynan");
+			System.out.println("korkeus ja paina");
+			System.out.println("enter.");
+			System.out.println(" ");
+			System.out.println(" ");
+			System.out.println("<- alas  ylos ->");
+		} else {
+			System.out.println("Nollaa kyna ja");
+			System.out.println("paina enter.");
+			System.out.println(" ");
+			System.out.println(" ");
+			System.out.println(" ");
+			System.out.println("<- alas  ylos ->");
+		}
+		
 		
 		//kynan siirtäminen alaspäin
 		Button.LEFT.addButtonListener(new ButtonListener() {
@@ -328,6 +376,12 @@ public class Piirturi {
 			piirraViiva(x2, y2, x2, y1);
 			piirraViiva(x2, y1, x1, y1);
 		}
+	}
+	
+	/**Tarjoaa toiminnallisuuden, jolla väärään paikkaan joutuneen piirturin voi nollata.*/
+	public void manuaalinenNollaus() {
+		asetaKorkeus(false);
+		vapaaPiirtaminen(false);
 	}
 	
 }

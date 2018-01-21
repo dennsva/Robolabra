@@ -4,6 +4,8 @@ import java.util.*;
 
 public interface Pelaaja {
 	
-	int pelaa(ArrayList<Integer> ruudukko);
+	int pelaa();
+	
+	void setPeli(Ristinolla peli);
 	
 }

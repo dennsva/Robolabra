@@ -3,6 +3,8 @@ package robotti;
 import java.util.ArrayList;
 
 import lejos.nxt.Button;
+import lejos.nxt.Sound;
+import lejos.util.Delay;
 
 public class Ristinolla {
 	
@@ -19,8 +21,13 @@ public class Ristinolla {
 	private Ristinollapiirturi piirturi;
 	private Pelaaja pelaaja1;
 	private Pelaaja pelaaja2;
+	private boolean piirretaan;
 	
 	public Ristinolla(Pelaaja pelaaja1, Pelaaja pelaaja2) {
+		this(pelaaja1, pelaaja2, true);
+	}
+	
+	public Ristinolla(Pelaaja pelaaja1, Pelaaja pelaaja2, boolean piirretaan) {
 		this.ruudukko = new ArrayList<Integer>();
 		for (int i = 0; i < 9; i++) {
 			ruudukko.add(0);
@@ -28,21 +35,32 @@ public class Ristinolla {
 		this.piirturi = new Ristinollapiirturi();
 		this.pelaaja1 = pelaaja1;
 		this.pelaaja2 = pelaaja2;
+		
+		this.pelaaja1.setPeli(this);
+		this.pelaaja2.setPeli(this);
+		
+		this.piirretaan = piirretaan;
 	}
 	
 	public ArrayList<Integer> getRuudukko() {
 		return ruudukko;
 	}
 	
-	/**Aloittaa pelin.*/
+	/**Aloittaa luodun pelin.*/
 	public void aloita() {
-		piirturi.luoKentta(0, 0, 300, 300);
-		piirturi.piirraKentta();
+		if (piirretaan) {
+			piirturi.luoKentta(0, 0, 500, 500);
+			piirturi.piirraKentta();
+		}
 		while (peliKaynnissa()) {
 			pelaa();
 		}
 		if (voittaja() > 0) {
-			viivaaVoittaja();
+			if (piirretaan) viivaaVoittaja();
+			Sound.playNote(Sound.PIANO, 660, 200);
+			Sound.playNote(Sound.PIANO, 660, 200);
+			Sound.playNote(Sound.PIANO, 660, 200);
+			Sound.playNote(Sound.PIANO, 880, 1200);
 			System.out.println("Voittaja on " + merkki(voittaja()));
 		} else {
 			System.out.println("Tasapeli!");
@@ -60,14 +78,50 @@ public class Ristinolla {
 	
 	/**Muodostaa ruudukosta merkkijonon.*/
 	public String ruudukkoString() {
+		return ruudukkoString(ruudukko);
+	}
+	
+	private String ruudukkoString(ArrayList<Integer> annettuRuudukko) {
 		String string = "";
 		for (int rivi = 0; rivi < 3; rivi++) {
 			for (int sarake = 0; sarake < 3; sarake++) {
-				string += merkki(ruudukko.get(3 * rivi + sarake));
+				string += merkki(annettuRuudukko.get(3 * rivi + sarake));
 			}
 			string += "\n";
 		}
 		return string;
+	}
+	
+	/**Nayttaa, milta ruudukko nayttaisi valitun siirron jalkeen.*/
+	public String ruudukkoJaValittuString(int indeksi) {
+		ArrayList<Integer> ruudukkoklooni = new ArrayList<Integer>();
+		for (int i = 0; i < ruudukko.size(); i++) {
+			ruudukkoklooni.add(ruudukko.get(i));
+		}
+		if (ruudukkoklooni.get(indeksi) == 0) {
+			ruudukkoklooni.set(indeksi, vuorossa());
+		}
+		return ruudukkoString(ruudukkoklooni);
+	}
+	
+	/**Palauttaa annetusta indeksista lahtien kasvavalla indeksillä ensimmaisen tyhjan ruudun indeksi.*/
+	public int ensimmainenTyhjaEtuperin(int indeksi) {
+		for (int toistoja = 0; toistoja < 10; toistoja++) {
+			if (ruudukko.get(indeksi) == 0) return indeksi;
+			indeksi++;
+			if (indeksi == 9) indeksi = 0;
+		}
+		return -1;
+	}
+	
+	/**Palauttaa annetusta indeksista lahtien laskevalla indeksillä ensimmaisen tyhjan ruudun indeksi.*/
+	public int ensimmainenTyhjaTakaperin(int indeksi) {
+		for (int toistoja = 0; toistoja < 10; toistoja++) {
+			if (ruudukko.get(indeksi) == 0) return indeksi;
+			indeksi--;
+			if (indeksi == -1) indeksi = 8;
+		}
+		return -1;
 	}
 	
 	/**Laskee annetun pelaajan merkkien maaran ruudukossa.*/
@@ -93,12 +147,12 @@ public class Ristinolla {
 	
 	/**Kysyy vuorossa olevalta siirtoa ja pelaa sen.*/
 	public boolean pelaa() {
-		int indeksi = vuorossaPelaaja().pelaa(ruudukko);
+		int indeksi = vuorossaPelaaja().pelaa();
 		if (indeksi < 0 || indeksi >= 9) return false;
         if (voittaja() > 0) return false;
         if (ruudukko.get(indeksi) > 0) return false;
         
-        piirturi.piirraMerkki(indeksi, vuorossa());
+        if (piirretaan) piirturi.piirraMerkki(indeksi, vuorossa());
         ruudukko.set(indeksi, vuorossa());
         return true;
 	}

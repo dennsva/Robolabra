@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="12" version="2.0">
+<workbench progressCount="11" version="2.0">
 <workbenchAdvisor/>
 <window height="768" maximized="true" width="958" x="0" y="24">
 <fastViewData fastViewLocation="1024"/>
@@ -47,9 +47,9 @@
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Robotti.java" partName="Robotti.java" path="/home/lego/Robolabra/Robotti/Robotti/src/robotti/Robotti.java" title="Robotti.java" tooltip="Robotti/src/robotti/Robotti.java" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Robotti.java" partName="Robotti.java" path="/home/lego/Robolabra/Robotti/Robotti/src/robotti/Robotti.java" title="Robotti.java" tooltip="Robotti/src/robotti/Robotti.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Robotti/src/robotti/Robotti.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="725" selectionTopPixel="266"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="732" selectionTopPixel="374"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Ristinolla.java" partName="Ristinolla.java" path="/home/lego/Robolabra/Robotti/Robotti/src/robotti/Ristinolla.java" title="Ristinolla.java" tooltip="Robotti/src/robotti/Ristinolla.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Robotti/src/robotti/Ristinolla.java"/>
@@ -95,7 +95,7 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Robotti/src/robotti/Satunnaispelaaja.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="249" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Ihmispelaaja.java" partName="Ihmispelaaja.java" path="/home/lego/Robolabra/Robotti/Robotti/src/robotti/Ihmispelaaja.java" title="Ihmispelaaja.java" tooltip="Robotti/src/robotti/Ihmispelaaja.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Ihmispelaaja.java" partName="Ihmispelaaja.java" path="/home/lego/Robolabra/Robotti/Robotti/src/robotti/Ihmispelaaja.java" title="Ihmispelaaja.java" tooltip="Robotti/src/robotti/Ihmispelaaja.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Robotti/src/robotti/Ihmispelaaja.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1099" selectionTopPixel="527"/>
 </editor>
@@ -118,14 +118,13 @@
 <element path="/Robotti/src/testaus"/>
 </expanded>
 <selection>
-<element path="/Robotti/src/robotti/Ihmispelaaja.java"/>
+<element path="/Robotti/build.xml"/>
 </selection>
 </viewState>
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Warnings"/>
+<expanded>&#x0A;<category IMemento.internal.id="Warnings"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="0" org.eclipse.ui.ide.markerType="0" org.eclipse.ui.ide.pathField="0" org.eclipse.ui.ide.resourceField="0" org.eclipse.ui.ide.severityAndDescriptionField="0"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -273,10 +272,8 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Robotti/src/robotti/Ihmispelaaja.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Robotti/src/robotti/Satunnaispelaaja.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Robotti/src/testaus/RistinollanTestaus.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Robotti/src/robotti/Robotti.java"/>
 </editors>
-<item historyLabel="Ristinolla.java" index="1">
-<position info="not_deleted" x="812" y="0"/>
-</item>
 <item historyLabel="Robotti.java" index="0">
 <position info="not_deleted" x="678" y="0"/>
 </item>
@@ -421,8 +418,11 @@
 <item historyLabel="RistinollanTestaus.java" index="11">
 <position info="not_deleted" x="608" y="0"/>
 </item>
-<item active="true" historyLabel="Ihmispelaaja.java" index="9">
+<item historyLabel="Ihmispelaaja.java" index="9">
 <position info="not_deleted" x="1032" y="0"/>
+</item>
+<item active="true" historyLabel="Robotti.java" index="12">
+<position info="not_deleted" x="725" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>

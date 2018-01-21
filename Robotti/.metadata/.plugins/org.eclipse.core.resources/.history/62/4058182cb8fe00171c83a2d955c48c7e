@@ -1,0 +1,83 @@
+package robotti;
+
+import lejos.nxt.Button;
+import lejos.nxt.ButtonListener;
+
+public class Kayttoliittyma {
+
+	private boolean napitAktivoitu;
+	private int indeksi;
+	
+	public Kayttoliittyma() {
+		this.indeksi = 0;
+		this.napitAktivoitu = false;
+		
+		Button.RIGHT.addButtonListener(new ButtonListener() {
+			public void buttonPressed(Button b) {
+				if (napitAktivoitu) {
+					indeksi++;
+					if (indeksi == 9) indeksi = 0;
+					tulostaOhje(indeksi);
+				}
+			}
+			
+			public void buttonReleased(Button b) {
+				
+			}
+		});
+		
+		Button.LEFT.addButtonListener(new ButtonListener() {
+			public void buttonPressed(Button b) {
+				if (napitAktivoitu) {
+					indeksi--;
+					if (indeksi == -1) indeksi = 8;
+					tulostaOhje(indeksi);
+				}
+			}
+			
+			public void buttonReleased(Button b) {
+				
+			}
+		});
+	}
+	
+	public void kaynnista() {
+		indeksi = 0;
+		tulostaOhje(indeksi);
+		napitAktivoitu = true;
+		Button.ENTER.waitForPressAndRelease();
+	}
+	
+	public void tulostaOhje(int indeksi) {
+		System.out.println("Valitse toiminto");
+		System.out.println("ja paina enter");
+		System.out.println("");
+		
+		if (indeksi == 0) {
+			System.out.println("Vapaa");
+			System.out.println("piirtaminen");
+		} else if (indeksi == 1) {
+			System.out.println("Ristinolla");
+			System.out.println("Pelaaja vastaan");
+			System.out.println("pelaaja");
+		} else if (indeksi == 2) {
+			System.out.println("Ristinolla");
+			System.out.println("Pelaaja vastaan");
+			System.out.println("kone");
+		} else if (indeksi == 3) {
+			System.out.println("Ristinolla");
+			System.out.println("Kone vastaan");
+			System.out.println("kone");
+		} else if (indeksi == 4) {
+			System.out.println("Ristinolla");
+			System.out.println("Testi");
+			System.out.println("ei piirreta");
+		} else if (indeksi == 5) {
+			System.out.println("Manuaalinen");
+			System.out.println("nollaus");
+		}
+	}
+	
+	
+	
+}

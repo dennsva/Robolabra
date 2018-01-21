@@ -1,0 +1,81 @@
+package robotti;
+
+import lejos.nxt.*;
+
+/**
+ * Example leJOS Project with an ant build file
+ *
+ */
+
+public class Robotti {
+	
+	//alas = A forward
+	//vasemmalle = B forward
+	//taakse = C forward
+	
+	//lähtöpaikka NXT:n vieressa!
+	
+	public static void main(String[] args) {	
+		Piirturi piirturi = new Piirturi();
+		
+		//piirturi.vapaaPiirtaminen();
+		//piirturi.ympyraTesti();
+		//piirturi.asetaKorkeus();
+		
+		//piirturi.piirraViiva(100, 100, 500, 800);
+		//piirturi.piirraViiva(100, 200, 400, 300);
+		//piirturi.nollaaRobotti();
+		
+		//piirturi.asetaKorkeus(false);
+		//piirturi.vapaaPiirtaminen(false);
+		
+		//for (int i = 0; i < 10; i++) piirturi.piirraNumero(i, 0, 0, 200, 400);
+		//piirturi.vapaaPiirtaminen(false);
+		ristinollaIhminenJaSatunnainen();
+	}
+	
+	/**Vapaa piirto-ohjelma!*/
+	public static void piirra() {
+		Piirturi piirturi = new Piirturi();
+		piirturi.asetaKorkeus();
+		piirturi.vapaaPiirtaminen();
+		piirturi.nollaaRobotti();
+	}
+	
+	/**Kaynnistaa ristinollapelin, jossa piirturi on pois kaytosta.*/
+	public static void ristinollaTesti() {
+		ristinollaIhmisilla(false);
+	}
+	
+	/**Ristinollapeli, jossa kaksi kayttajaa pelaavat vastakkain.*/
+	public static void ristinollaIhmisilla() {
+		ristinollaIhmisilla(true);
+	}
+	
+	private static void ristinollaIhmisilla(boolean piirretaan) {
+		Pelaaja pelaaja1 = new Ihmispelaaja(1);
+		Pelaaja pelaaja2 = new Ihmispelaaja(2);
+		
+		Ristinolla peli = new Ristinolla(pelaaja1, pelaaja2, piirretaan);
+		peli.aloita();
+	}
+	
+	/**Ristinollapeli, jossa kone arpoo molempien pelaajien siirrot.*/
+	public static void ristinollaSatunnaisilla() {
+		Pelaaja pelaaja1 = new Satunnaispelaaja(1);
+		Pelaaja pelaaja2 = new Satunnaispelaaja(2);
+		
+		Ristinolla peli = new Ristinolla(pelaaja1, pelaaja2);
+		peli.aloita();
+	}
+	
+	/**Ristinollapeli, jossa kayttaja pelaa satunnaisesti pelaavaa konetta vastaan.*/
+	public static void ristinollaIhminenJaSatunnainen() {
+		Pelaaja pelaaja1 = new Ihmispelaaja(1);
+		Pelaaja pelaaja2 = new Satunnaispelaaja(2);
+		
+		Ristinolla peli = new Ristinolla(pelaaja1, pelaaja2, false);
+		peli.aloita();
+	}
+
+}

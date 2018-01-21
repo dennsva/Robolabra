@@ -1,0 +1,85 @@
+package robotti;
+
+import java.util.ArrayList;
+
+import lejos.nxt.Button;
+import lejos.nxt.ButtonListener;
+import lejos.nxt.LCD;
+
+public class Ihmispelaaja implements Pelaaja {
+
+	private final int pelaaja;
+	private int indeksi;
+	private boolean napitAktivoitu;
+	
+	public Ihmispelaaja(int pelaaja) {
+		this.pelaaja = pelaaja;
+		this.indeksi = 0;
+		this.napitAktivoitu = false;
+		
+		Button.RIGHT.addButtonListener(new ButtonListener() {
+			public void buttonPressed(Button b) {
+				if (napitAktivoitu) {
+					indeksi++;
+					if (indeksi == 9) indeksi = 0;
+	
+					LCD.clear();
+					System.out.println("pelaaja " + pelaaja);
+					System.out.println("Valitse pelattava");
+					System.out.println("ruutu ja paina");
+					System.out.println("enter");
+					
+					System.out.println(indeksi);
+				}
+			}
+			
+			public void buttonReleased(Button b) {
+				
+			}
+		});
+		
+		Button.RIGHT.addButtonListener(new ButtonListener() {
+			public void buttonPressed(Button b) {
+				if (napitAktivoitu) {
+					indeksi--;
+					if (indeksi == -1) indeksi = 8;
+	
+					LCD.clear();
+					System.out.println("pelaaja " + pelaaja);
+					System.out.println("Valitse pelattava");
+					System.out.println("ruutu ja paina");
+					System.out.println("enter");
+					
+					System.out.println(indeksi);
+				}
+			}
+			
+			public void buttonReleased(Button b) {
+				
+			}
+		});
+	}
+	
+	/*Kysyy kayttajalta siirtoa ja pelaa sen.**/
+	public int pelaa(ArrayList<Integer> ruudukko) {
+		indeksi = 0;
+		
+		//LCD.clear();
+		System.out.println("pelaaja " + pelaaja);
+		System.out.println("Valitse pelattava");
+		//System.out.println("ruutu ja paina");
+		//System.out.println("enter");
+		System.out.println(ruudukko);
+		System.out.println(indeksi);
+		
+		napitAktivoitu = true;
+		Button.ENTER.waitForPressAndRelease();
+		napitAktivoitu = false;
+		return indeksi;
+	}
+	
+	public void paivitaIndeksi(int indeksi) {
+		this.indeksi = indeksi;
+	}
+	
+}

@@ -5,18 +5,16 @@ import java.util.ArrayList;
 import lejos.nxt.Button;
 import lejos.nxt.ButtonListener;
 import lejos.nxt.LCD;
-import lejos.nxt.Motor;
-import lejos.nxt.SensorPort;
-import lejos.nxt.SensorPortListener;
-import lejos.nxt.TouchSensor;
 
 public class Ihmispelaaja implements Pelaaja {
 
-	private int pelaaja;
+	private final int pelaaja;
 	private int indeksi;
 	private boolean napitAktivoitu;
+	private Ristinolla peli;
 	
-	public Ihmispelaaja(int pelaaja) {
+	public Ihmispelaaja(final int pelaaja) {
+		this.peli = peli;
 		this.pelaaja = pelaaja;
 		this.indeksi = 0;
 		this.napitAktivoitu = false;
@@ -26,16 +24,23 @@ public class Ihmispelaaja implements Pelaaja {
 				if (napitAktivoitu) {
 					indeksi++;
 					if (indeksi == 9) indeksi = 0;
-	
-					/*
-					LCD.clear();
-					System.out.println("pelaaja " + pelaaja);
-					System.out.println("Valitse pelattava");
-					System.out.println("ruutu ja paina");
-					System.out.println("enter");
-					*/
-					
-					System.out.println(indeksi);
+					indeksi = peli.ensimmainenTyhjaEtuperin(indeksi);
+					tulostaInfot();
+				}
+			}
+			
+			public void buttonReleased(Button b) {
+				
+			}
+		});
+		
+		Button.LEFT.addButtonListener(new ButtonListener() {
+			public void buttonPressed(Button b) {
+				if (napitAktivoitu) {
+					indeksi--;
+					if (indeksi == -1) indeksi = 8;
+					indeksi = peli.ensimmainenTyhjaTakaperin(indeksi);
+					tulostaInfot();
 				}
 			}
 			
@@ -45,17 +50,17 @@ public class Ihmispelaaja implements Pelaaja {
 		});
 	}
 	
+	/**Antaa pelaaja-oliolle pelin tiedot.*/
+	public void setPeli(Ristinolla peli) {
+		this.peli = peli;
+	}
+	
 	/*Kysyy kayttajalta siirtoa ja pelaa sen.**/
-	public int pelaa(ArrayList<Integer> ruudukko) {
+	public int pelaa() {
 		indeksi = 0;
+		indeksi = peli.ensimmainenTyhjaEtuperin(indeksi);
 		
-		//LCD.clear();
-		System.out.println("pelaaja " + pelaaja);
-		System.out.println("Valitse pelattava");
-		//System.out.println("ruutu ja paina");
-		//System.out.println("enter");
-		System.out.println(ruudukko);
-		System.out.println(indeksi);
+		tulostaInfot();
 		
 		napitAktivoitu = true;
 		Button.ENTER.waitForPressAndRelease();
@@ -63,8 +68,13 @@ public class Ihmispelaaja implements Pelaaja {
 		return indeksi;
 	}
 	
-	public void paivitaIndeksi(int indeksi) {
-		this.indeksi = indeksi;
+	private void tulostaInfot() {
+		LCD.clear();
+		System.out.println("Pelaaja " + peli.merkki(pelaaja));
+		System.out.println("Valitse");
+		System.out.println("pelattava ruutu");
+		System.out.println("ja paina enter");
+		System.out.println(peli.ruudukkoJaValittuString(indeksi));
 	}
 	
 }

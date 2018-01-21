@@ -1,0 +1,248 @@
+package robotti;
+
+import java.util.ArrayList;
+
+import lejos.nxt.Button;
+import lejos.nxt.Sound;
+import lejos.util.Delay;
+
+public class Ristinolla {
+	
+	//ruudukon indeksit:
+	// 0 1 2
+	// 3 4 5
+	// 6 7 8
+	
+	// 0 tarkoittaa tyhjää
+	// 1 on pelaaja 1
+	// 2 on pelaaja 2
+	
+	private ArrayList<Integer> ruudukko;
+	private Ristinollapiirturi piirturi;
+	private Pelaaja pelaaja1;
+	private Pelaaja pelaaja2;
+	private boolean piirretaan;
+	
+	public Ristinolla(Pelaaja pelaaja1, Pelaaja pelaaja2) {
+		this(pelaaja1, pelaaja2, true);
+	}
+	
+	public Ristinolla(Pelaaja pelaaja1, Pelaaja pelaaja2, boolean piirretaan) {
+		this.ruudukko = new ArrayList<Integer>();
+		for (int i = 0; i < 9; i++) {
+			ruudukko.add(0);
+		}
+		this.piirturi = new Ristinollapiirturi();
+		this.pelaaja1 = pelaaja1;
+		this.pelaaja2 = pelaaja2;
+		
+		this.pelaaja1.setPeli(this);
+		this.pelaaja2.setPeli(this);
+		
+		this.piirretaan = piirretaan;
+	}
+	
+	public ArrayList<Integer> getRuudukko() {
+		return ruudukko;
+	}
+	
+	/**Aloittaa luodun pelin.*/
+	public void aloita() {
+		if (piirretaan) {
+			piirturi.luoKentta(0, 0, 500, 500);
+			piirturi.piirraKentta();
+		}
+		while (peliKaynnissa()) {
+			pelaa();
+		}
+		if (voittaja() > 0) {
+			for (int i = 0; i < 3; i++) {
+				Sound.playTone(660, 150);
+				try {Thread.sleep(200);} catch (InterruptedException e) {}
+			}
+			Sound.playTone(880, 1200);
+			try {Thread.sleep(1200);} catch (InterruptedException e) {}
+			
+			if (piirretaan) viivaaVoittaja();
+			System.out.println("Voittaja on " + merkki(voittaja()));
+		} else {
+			System.out.println("Tasapeli!");
+		}
+		Button.ENTER.waitForPressAndRelease();
+		piirturi.nollaaRobotti();
+	}
+	
+	/**Palauttaa merkin, jota annettu pelaaja kayttaa.*/
+	public String merkki(int pelaaja) {
+		if (pelaaja == 1) return "X";
+		if (pelaaja == 2) return "O";
+		return "-";
+	}
+	
+	/**Muodostaa ruudukosta merkkijonon.*/
+	public String ruudukkoString() {
+		return ruudukkoString(ruudukko);
+	}
+	
+	private String ruudukkoString(ArrayList<Integer> annettuRuudukko) {
+		String string = "";
+		for (int rivi = 0; rivi < 3; rivi++) {
+			for (int sarake = 0; sarake < 3; sarake++) {
+				string += merkki(annettuRuudukko.get(3 * rivi + sarake));
+			}
+			string += "\n";
+		}
+		return string;
+	}
+	
+	/**Nayttaa, milta ruudukko nayttaisi valitun siirron jalkeen.*/
+	public String ruudukkoJaValittuString(int indeksi) {
+		ArrayList<Integer> ruudukkoklooni = new ArrayList<Integer>();
+		for (int i = 0; i < ruudukko.size(); i++) {
+			ruudukkoklooni.add(ruudukko.get(i));
+		}
+		if (ruudukkoklooni.get(indeksi) == 0) {
+			ruudukkoklooni.set(indeksi, vuorossa());
+		}
+		return ruudukkoString(ruudukkoklooni);
+	}
+	
+	/**Palauttaa annetusta indeksista lahtien kasvavalla indeksillä ensimmaisen tyhjan ruudun indeksi.*/
+	public int ensimmainenTyhjaEtuperin(int indeksi) {
+		for (int toistoja = 0; toistoja < 10; toistoja++) {
+			if (ruudukko.get(indeksi) == 0) return indeksi;
+			indeksi++;
+			if (indeksi == 9) indeksi = 0;
+		}
+		return -1;
+	}
+	
+	/**Palauttaa annetusta indeksista lahtien laskevalla indeksillä ensimmaisen tyhjan ruudun indeksi.*/
+	public int ensimmainenTyhjaTakaperin(int indeksi) {
+		for (int toistoja = 0; toistoja < 10; toistoja++) {
+			if (ruudukko.get(indeksi) == 0) return indeksi;
+			indeksi--;
+			if (indeksi == -1) indeksi = 8;
+		}
+		return -1;
+	}
+	
+	/**Laskee annetun pelaajan merkkien maaran ruudukossa.*/
+	public int pelattuja(int pelaaja) {
+		int pelattuja = 0;
+		for (int i = 0; i < ruudukko.size(); i++) {
+			if (ruudukko.get(i) == pelaaja) pelattuja++;
+		}
+		return pelattuja;
+	}
+	
+	/**Palauttaa sen pelaajan numeron, joka on vuorossa.*/
+	public int vuorossa() {
+		if (pelattuja(1) > pelattuja(2)) return 2;
+		return 1;
+	}
+	
+	/**Palauttaa Pelaajan, joka on vuorossa*/
+	public Pelaaja vuorossaPelaaja() {
+		if (vuorossa() == 2) return pelaaja2;
+		return pelaaja1;
+	}
+	
+	/**Kysyy vuorossa olevalta siirtoa ja pelaa sen.*/
+	public boolean pelaa() {
+		int indeksi = vuorossaPelaaja().pelaa();
+		if (indeksi < 0 || indeksi >= 9) return false;
+        if (voittaja() > 0) return false;
+        if (ruudukko.get(indeksi) > 0) return false;
+        
+        if (piirretaan) piirturi.piirraMerkki(indeksi, vuorossa());
+        ruudukko.set(indeksi, vuorossa());
+        return true;
+	}
+	
+	/**Tarkistaa, onko ruudukon annetuissa indekseissa kolme saman pelaajan merkkia.*/
+	public int voittorivi(int indeksi1, int indeksi2, int indeksi3) {
+		if (ruudukko.get(indeksi1) == 1
+				&& ruudukko.get(indeksi2) == 1
+				&& ruudukko.get(indeksi3) == 1) {
+			return 1;
+		}
+		
+		if (ruudukko.get(indeksi1) == 2
+				&& ruudukko.get(indeksi2) == 2
+				&& ruudukko.get(indeksi3) == 2) {
+			return 2;
+		}
+		
+		return 0;
+	}
+	
+	/**Palauttaa pelaajan, joka voitti pelin.*/
+	public int voittaja() {
+		return voittaja(false);
+	}
+	
+	/**Piirtaa viivan voittorivien yli. Palauttaa voittajan.*/
+	public int viivaaVoittaja() {
+		return voittaja(true);
+	}
+	
+	private int voittaja(boolean viivaa) {
+		//rivit
+		if (voittorivi(0, 1, 2) > 0) {
+			if (viivaa) piirturi.viivaaRivi(0);
+			return voittorivi(0, 1, 2);
+		}
+		if (voittorivi(3, 4, 5) > 0) {
+			if (viivaa) piirturi.viivaaRivi(1);
+			return voittorivi(3, 4, 5);
+		}
+		if (voittorivi(6, 7, 8) > 0) {
+			if (viivaa) piirturi.viivaaRivi(2);
+			return voittorivi(6, 7, 8);
+		}
+		
+		//sarakkeet
+		if (voittorivi(0, 3, 6) > 0) {
+			if (viivaa) piirturi.viivaaRivi(3);
+			return voittorivi(0, 3, 6);
+		}
+		if (voittorivi(1, 4, 7) > 0) {
+			if (viivaa) piirturi.viivaaRivi(4);
+			return voittorivi(1, 4, 7);
+		}
+		if (voittorivi(2, 5, 8) > 0) {
+			if (viivaa) piirturi.viivaaRivi(5);
+			return voittorivi(2, 5, 8);
+		}
+		
+		//diagonaalit
+		if (voittorivi(0, 4, 8) > 0) {
+			if (viivaa) piirturi.viivaaRivi(6);
+			return voittorivi(0, 4, 8);
+		}
+		if (voittorivi(2, 4, 6) > 0) {
+			if (viivaa) piirturi.viivaaRivi(7);
+			return voittorivi(2, 4, 6);
+		}
+		
+		//ei voittajaa
+		return 0;
+	}
+	
+	public void voittoaani() {
+		for (int i = 0; i < 3; i++) {
+			Sound.playTone(660, 150);
+			try {Thread.sleep(200);} catch (InterruptedException e) {}
+		}
+		Sound.playTone(880, 1200);
+		try {Thread.sleep(1200);} catch (InterruptedException e) {}
+	}
+	
+	/**Palauttaa true jos ja vain jos peli on edelleen kaynnissa.*/
+	public boolean peliKaynnissa() {
+		if (voittaja() == 0 && pelattuja(1) + pelattuja(2) < 9) return true;
+		return false;
+	}
+	
+}
